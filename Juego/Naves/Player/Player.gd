@@ -3,7 +3,8 @@ extends RigidBody2D
 
 ##Atributos export
 export var potencia_motor:int = 20
-export var potencia_rotacion: int = 400
+export var potencia_rotacion: int = 280
+
 
 ##Atributos
 var empuje:Vector2 = Vector2.ZERO
@@ -11,7 +12,7 @@ var dir_rotacion:int = 0
 
 ##Atributos Onready
 onready var canion:Canion = $Canion
-
+onready var laser:RayoLaser = $LaserBeam2D
 ## Metodos
 func _integrate_forces(state: Physics2DDirectBodyState) ->void:
 	apply_central_impulse(empuje.rotated(rotation))
@@ -19,8 +20,17 @@ func _integrate_forces(state: Physics2DDirectBodyState) ->void:
 
 func _process(delta: float)-> void:
 	player_input()
+
+func _unhandled_input(event: InputEvent)-> void:
+	##disparo de rayo
+	if event.is_action_pressed("disparo_secundario"):
+		laser.set_is_casting(true)
+	if event.is_action_released("disparo_secundario"):
+		laser.set_is_casting(false)
+
 ## Metodos Custom
 func player_input() -> void:
+	
 	#Empuje
 	empuje = Vector2.ZERO
 	if Input.is_action_pressed("mover_adelante"):
