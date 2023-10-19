@@ -39,7 +39,7 @@ func set_is_casting(cast: bool) -> void:
 		fill.points[1] = cast_to
 		appear()
 	else:
-		# Reset the laser endpoint
+		
 		fill.points[1] = Vector2.ZERO
 
 		collision_particles.emitting = false
@@ -49,8 +49,7 @@ func set_is_casting(cast: bool) -> void:
 	beam_particles.emitting = is_casting
 	casting_particles.emitting = is_casting
 
-# Controls the emission of particles and extends the Line2D to `cast_to` or the ray's
-# collision point, whichever is closest.
+
 func cast_beam() -> void:
 	var cast_point : Vector2 = cast_to
 
