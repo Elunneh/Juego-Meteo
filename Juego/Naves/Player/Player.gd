@@ -119,6 +119,7 @@ func player_input() -> void:
 ## Destruccion
 func destruir() -> void:
 	controlador_estados(ESTADO.MUERTO)
+	Eventos.emit_signal("nave_destruida", global_position, 3)
 
 
 
