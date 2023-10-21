@@ -26,28 +26,30 @@ func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 
 func _process(delta: float) -> void:
 	player_input()
+	print ("estare funcionando")
 
 func esta_input_activo() -> bool:
-	return estado_actual  in [ESTADO.MUERTO, ESTADO.SPAWN]
+	return estado_actual in [ESTADO.MUERTO, ESTADO.SPAWN]
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not esta_input_activo():
 		return
 
 	# Disparo de rayo
-	if event.is_action_pressed("disparo_secundario"):
-		laser.set_is_casting(true)
-	if event.is_action_released("disparo_secundario"):
-		laser.set_is_casting(false)
+	if event is InputEventAction:
+		if event.action == "disparo_secundario" and event.pressed:
+			laser.set_is_casting(true)
+		elif event.action == "disparo_secundario" and not event.pressed:
+			laser.set_is_casting(false)
 
 	# Control de estela y sonido de motor
-	if event.is_action_pressed("mover_adelante"):
-		estela.set_max_points(estela_maxima)
-		motor_sfx.sonido_on()
-
-	if event.is_action_pressed("mover_atras"):
-		estela.set_max_points(0)
-		motor_sfx.sonido_off()
+	if event is InputEventAction:
+		if event.action == "mover_adelante" and event.pressed:
+			estela.set_max_points(estela_maxima)
+			motor_sfx.sonido_on()
+		elif event.action == "mover_adelante" and not event.pressed:
+			estela.set_max_points(0)
+			motor_sfx.sonido_off()
 
 func controlador_estados(nuevo_estado: int) -> void:
 	if estado_actual != nuevo_estado:
@@ -75,11 +77,11 @@ func player_input() -> void:
 	# Empuje
 	empuje = Vector2.ZERO
 	if Input.is_action_pressed("mover_adelante"):
-		empuje = Vector2(potencia_motor, 0)
+		empuje.x = potencia_motor
 	elif Input.is_action_pressed("mover_atras"):
-		empuje = Vector2(-potencia_motor, 0)
+		empuje.x = -potencia_motor
 
-	# Rotacion
+	# Rotación
 	dir_rotacion = 0
 	if Input.is_action_pressed("rotar_antihorario"):
 		dir_rotacion -= 1
@@ -89,13 +91,10 @@ func player_input() -> void:
 	# Disparo
 	if Input.is_action_pressed("disparo_principal"):
 		canion.set_esta_disparando(true)
-	if Input.is_action_just_released("disparo_principal"):
+	elif Input.is_action_just_released("disparo_principal"):
 		canion.set_esta_disparando(false)
 		print("¡Estoy disparando!")
 
 func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
 	if anim_name == "Spawn":
 		controlador_estados(ESTADO.VIVO)
-
-	
-		
