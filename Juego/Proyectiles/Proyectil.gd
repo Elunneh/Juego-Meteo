@@ -35,7 +35,9 @@ func _on_VisibilityNotifier2D_screen_exited()-> void:
 
 
 func _on_area_entered(area: Area2D)-> void:
-	daniar(area)
+	if area.has_method("recibir_danio"):
+		area.recibir_danio(danio)
+	queue_free()
 	
 	
 
