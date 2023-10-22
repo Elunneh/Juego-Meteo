@@ -9,10 +9,20 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Area2D",
+"class": "AreaColision",
+"language": "GDScript",
+"path": "res://Juego/Naves/Enemigos/Area2D.gd"
+}, {
 "base": "Node2D",
 "class": "Canion",
 "language": "GDScript",
 "path": "res://Juego/Proyectiles/Canion.gd"
+}, {
+"base": "Node2D",
+"class": "Dummy",
+"language": "GDScript",
+"path": "res://Juego/Naves/Enemigos/EnemigoDummy.gd"
 }, {
 "base": "Line2D",
 "class": "Estela",
@@ -45,7 +55,9 @@ _global_script_classes=[ {
 "path": "res://Juego/LaseBeam/LaserBeam2D.gd"
 } ]
 _global_script_class_icons={
+"AreaColision": "",
 "Canion": "",
+"Dummy": "",
 "Estela": "",
 "Motor": "",
 "Nivel": "",
