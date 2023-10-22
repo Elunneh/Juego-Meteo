@@ -6,12 +6,16 @@ extends Area2D
 var velocidad:Vector2 = Vector2.ZERO
 var danio:float
 
-##Metodos
+
+
+
+##constructor
 func crear(pos: Vector2, dir: float, vel: float, danio_p: int)-> void:
 	position = pos
 	rotation = dir
 	velocidad = Vector2(vel, 0).rotated(dir)
 
+## metodos
 func _physics_process(delta : float) -> void:
 	position += velocidad * delta
 
@@ -37,5 +41,5 @@ func _on_area_entered(area: Area2D)-> void:
 	
 
 
-func _on_body_entered(body):
+func _on_body_entered(body: Node)-> void:
 	daniar(body)

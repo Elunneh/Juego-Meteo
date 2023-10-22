@@ -40,7 +40,7 @@ func set_is_casting(cast: bool) -> void:
 		appear()
 	else:
 		
-		fill.points[1] = Vector2.ZERO
+		laser_sfx.stop()
 
 		collision_particles.emitting = false
 		disappear()
@@ -52,6 +52,7 @@ func set_is_casting(cast: bool) -> void:
 
 func cast_beam() -> void:
 	var cast_point : Vector2 = cast_to
+	
 
 	force_raycast_update()
 	collision_particles.emitting = is_colliding()
@@ -60,6 +61,7 @@ func cast_beam() -> void:
 		cast_point = to_local(get_collision_point())
 		collision_particles.global_rotation = get_collision_normal().angle()
 		collision_particles.position = cast_point
+		
 
 	fill.points[1] = cast_point
 	beam_particles.position = cast_point * 0.5
