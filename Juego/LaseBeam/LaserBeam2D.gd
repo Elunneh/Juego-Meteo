@@ -1,17 +1,16 @@
 class_name RayoLaser
 extends RayCast2D
 
-# Speed at which the laser extends when first fired, in pixels per second.
+
 export var cast_speed : float = 7000.0
-# Maximum length of the laser in pixels.
+
 export var max_length : float = 1400.0
-# Base duration of the tween animation in seconds.
+
 export var growth_time : float = 0.1
 
-# If `true`, the laser is firing.
-# It plays appearing and disappearing animations when it's not animating.
-# See `appear()` and `disappear()` for more information.
+
 var is_casting : bool = false setget set_is_casting
+var radio_danio: float
 
 onready var fill : Line2D = $FillLine2D
 onready var tween : Tween = $Tween
@@ -61,6 +60,8 @@ func cast_beam() -> void:
 		cast_point = to_local(get_collision_point())
 		collision_particles.global_rotation = get_collision_normal().angle()
 		collision_particles.position = cast_point
+		if get_collider().has_method("recibir_danio"):
+			get_collider().recibir_danio(radio_danio )
 		
 
 	fill.points[1] = cast_point
