@@ -49,6 +49,7 @@ func disparar()-> void:
 		var new_proyectil: Proyectil = proyectil.instance()
 		new_proyectil.crear(punto_disparo.global_position, get_owner().rotation, velocidad_proyectil, danio_proyectil)
 		Eventos.emit_signal("disparo", new_proyectil)
+		
 	
 
 func _on_TimerEnfriamiento_timeout()-> void:

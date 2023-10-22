@@ -37,6 +37,7 @@ func _on_VisibilityNotifier2D_screen_exited()-> void:
 func _on_area_entered(area: Area2D)-> void:
 	daniar(area)
 	
+	
 
 	
 

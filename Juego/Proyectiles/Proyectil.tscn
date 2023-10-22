@@ -7,7 +7,9 @@
 radius = 5.03685
 height = 28.6423
 
-[node name="Proyectil" type="Area2D"]
+[node name="Proyectil" type="Area2D" groups=[
+"proyectil",
+]]
 z_index = 40
 z_as_relative = false
 collision_layer = 8

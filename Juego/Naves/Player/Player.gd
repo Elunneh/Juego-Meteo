@@ -121,13 +121,18 @@ func player_input() -> void:
 func destruir() -> void:
 	controlador_estados(ESTADO.MUERTO)
 	Eventos.emit_signal("nave_destruida", global_position, 3)
+	queue_free()
 
 
 func recibir_danio(danio:float)-> void:
 	hitpoints -= danio
 	if hitpoints <= 0.0:
-		destruir()
-	impacto_sfx.play()
+		impacto_sfx.play()
+		controlador_estados(ESTADO.MUERTO)
+	Eventos.emit_signal("nave_destruida", global_position, 3)
+	queue_free()
+
+	
 
 func _on_AnimationPlayer_animation_finished(anim_name: String)-> void:
 	if anim_name == "Spawn":

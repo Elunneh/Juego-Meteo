@@ -52,6 +52,7 @@ can_sleep = false
 linear_damp = 1.0
 angular_damp = 4.0
 script = ExtResource( 3 )
+hitpoints = 100.0
 
 [node name="Sprite" type="Sprite" parent="."]
 rotation = 1.5708
