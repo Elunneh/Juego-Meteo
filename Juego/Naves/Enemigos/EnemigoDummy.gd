@@ -3,6 +3,7 @@ extends Node2D
 
 var hitpoints: float = 10.0
 var hitpointss : float = 0.0
+
 func recibir_danio(danio: float) -> void:
 	hitpoints -= danio
 	if hitpointss <= 0.0:
