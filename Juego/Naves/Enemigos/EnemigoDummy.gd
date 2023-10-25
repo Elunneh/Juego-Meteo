@@ -1,19 +1,19 @@
 class_name Dummy
 extends Node2D
 
-var hitpoints: float = 10.0
-var hitpointss : float = 0.0
+var hitpoints: float = 20.0
+
 
 func recibir_danio(danio: float) -> void:
 	hitpoints -= danio
-	if hitpointss <= 0.0:
+	if hitpoints <= 0.0:
 		
 		queue_free()
 
 
 func _on_Area2D_body_entered(body: Node2D)-> void:
 	if body is Player:
-		body.destruir()
+		body.destruir() 
 		
 
 		

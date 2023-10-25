@@ -14,7 +14,7 @@ func crear(pos: Vector2, dir: float, vel: float, danio_p: int)-> void:
 	position = pos
 	rotation = dir
 	velocidad = Vector2(vel, 0).rotated(dir)
-
+	danio = danio_p
 ## metodos
 func _physics_process(delta : float) -> void:
 	position += velocidad * delta
@@ -23,8 +23,9 @@ func _physics_process(delta : float) -> void:
 func daniar(otro_cuerpo: CollisionObject2D)-> void:
 	if otro_cuerpo.has_method("recibir_danio"):
 		otro_cuerpo.recibir_danio(danio)
-	print ("daniando")
+	
 	queue_free()
+	
 	
 
 ## Señales internas

@@ -22,7 +22,7 @@ onready var estela:Estela = $EstelaPuntoInicio/Trail2D
 onready var motor_sfx: Motor = $MotorSFX
 onready var colisionador:CollisionShape2D = $CollisionShape2D
 onready var impacto_sfx: AudioStreamPlayer = $ImpactoSFX
-
+onready var escudo: Escudo = $Escudo
 
 func _ready()-> void:
 	controlador_estados(estado_actual)
@@ -40,7 +40,10 @@ func _unhandled_input(event: InputEvent)-> void:
 	if not esta_input_activo():
 		return
 	
+##control escudo
 
+	if event.is_action_pressed("escudo"):
+		escudo.activar()
 	
 	
 	
@@ -127,10 +130,12 @@ func destruir() -> void:
 func recibir_danio(danio:float)-> void:
 	hitpoints -= danio
 	if hitpoints <= 0.0:
-		impacto_sfx.play()
+		Eventos.emit_signal("nave_destruida", global_position, 3)
+		
 		controlador_estados(ESTADO.MUERTO)
-	Eventos.emit_signal("nave_destruida", global_position, 3)
-	queue_free()
+		impacto_sfx.play() 
+		queue_free()
+
 
 	
 
