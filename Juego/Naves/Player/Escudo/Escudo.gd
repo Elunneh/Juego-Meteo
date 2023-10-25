@@ -12,6 +12,7 @@ func controlar_colisionador(esta_desactivado : bool)-> void:
 func activar()->void:
 	controlar_colisionador(false)
 	$AnimationPlayer.play("Activando")
+	
 
 ##señales interna
 
@@ -19,5 +20,5 @@ func activar()->void:
 
 
 func _on_AnimationPlayer_animation_finished(anim_name: String)-> void:
-	if anim_name == "activando":
+	if anim_name == "Activando":
 		$AnimationPlayer.play("Activado")
