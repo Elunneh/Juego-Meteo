@@ -24,11 +24,14 @@ onready var colisionador:CollisionShape2D = $CollisionShape2D
 onready var impacto_sfx: AudioStreamPlayer = $ImpactoSFX
 onready var escudo: Escudo = $Escudo
 
+
+
+
+## Metodos
 func _ready()-> void:
 	controlador_estados(estado_actual)
 
 
-## Metodos
 func _integrate_forces(state: Physics2DDirectBodyState) ->void:
 	apply_central_impulse(empuje.rotated(rotation))
 	apply_torque_impulse(dir_rotacion * potencia_rotacion)
@@ -42,7 +45,7 @@ func _unhandled_input(event: InputEvent)-> void:
 	
 ##control escudo
 
-	if event.is_action_pressed("escudo"):
+	if event.is_action_pressed("escudo") and not escudo.get_esta_activado():
 		escudo.activar()
 	
 	
