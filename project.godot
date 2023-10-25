@@ -34,6 +34,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Juego/Naves/Player/Estela/Trail2D.gd"
 }, {
+"base": "RigidBody2D",
+"class": "Meteoritos",
+"language": "GDScript",
+"path": "res://Juego/Metetoritos/Meteoritos.gd"
+}, {
 "base": "AudioStreamPlayer2D",
 "class": "Motor",
 "language": "GDScript",
@@ -65,6 +70,7 @@ _global_script_class_icons={
 "Dummy": "",
 "Escudo": "",
 "Estela": "",
+"Meteoritos": "",
 "Motor": "",
 "Nivel": "",
 "Player": "",

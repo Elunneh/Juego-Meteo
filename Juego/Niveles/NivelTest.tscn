@@ -4,7 +4,7 @@
 [ext_resource path="res://default_env.tres" type="Environment" id=2]
 [ext_resource path="res://Juego/Niveles/Nivel.gd" type="Script" id=3]
 [ext_resource path="res://Juego/Explosiones/Explosion.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Juego/Naves/Enemigos/EnemigoDummy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Juego/Metetoritos/Meteoritos.tscn" type="PackedScene" id=5]
 
 [node name="NivelTest" type="Node2D"]
 script = ExtResource( 3 )
@@ -16,5 +16,20 @@ position = Vector2( 485, 238 )
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 2 )
 
-[node name="EnemigoDummy" parent="." instance=ExtResource( 5 )]
-position = Vector2( 872.878, 230.706 )
+[node name="Meteoritos" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1256.42, 130.363 )
+vel_ang_base = 500.0
+
+[node name="Meteoritos2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1203.57, 290.548 )
+vel_lineal_base = Vector2( -100, -150 )
+vel_ang_base = 5.0
+
+[node name="Meteoritos3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1317.72, 241.799 )
+vel_lineal_base = Vector2( -300, 300 )
+vel_ang_base = 15.0
+
+[node name="Meteoritos4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1382.78, 383.221 )
+vel_ang_base = 20.0
