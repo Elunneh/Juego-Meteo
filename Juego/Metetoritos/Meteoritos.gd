@@ -12,3 +12,8 @@ func _ready()-> void:
 	linear_velocity = vel_lineal_base
 	angular_velocity = vel_ang_base
 
+##constructor
+
+func crear(pos: Vector2, dir: Vector2)-> void:
+	position = pos
+	linear_velocity = vel_lineal_base * dir
