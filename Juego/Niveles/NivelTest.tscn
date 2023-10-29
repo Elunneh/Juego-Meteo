@@ -42,3 +42,4 @@ tipo_peligro = "Meteorito"
 [node name="icon" type="Sprite" parent="."]
 position = Vector2( 909.333, 239.336 )
 texture = ExtResource( 10 )
+[connection signal="tween_completed" from="TweenCamara" to="." method="_on_TweenCamara_tween_completed"]
