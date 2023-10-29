@@ -1,14 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Juego/Naves/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://default_env.tres" type="Environment" id=2]
 [ext_resource path="res://Juego/Niveles/Nivel.gd" type="Script" id=3]
 [ext_resource path="res://Juego/Explosiones/Explosion.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Juego/Metetoritos/MeteoritoSpawner.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Juego/Metetoritos/Meteoritos.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Juego/Metetoritos/ExplosionMeteorito.tscn" type="PackedScene" id=7]
 
 [node name="NivelTest" type="Node2D"]
 script = ExtResource( 3 )
 explosion = ExtResource( 4 )
+meteorito = ExtResource( 6 )
+explosion_meteorito = ExtResource( 7 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 485, 238 )
@@ -17,16 +21,33 @@ position = Vector2( 485, 238 )
 environment = ExtResource( 2 )
 
 [node name="MeteoritoSpawner" parent="." instance=ExtResource( 5 )]
-position = Vector2( 851.424, 102.977 )
+position = Vector2( 868.998, 648.733 )
+direccion = Vector2( 2, 1 )
 
 [node name="MeteoritoSpawner2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 292.497, 257.574 )
+position = Vector2( 1486.49, 833.194 )
+direccion = Vector2( -2, -1 )
 
 [node name="MeteoritoSpawner3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 739.639, 454.982 )
+position = Vector2( 1102.8, 156.471 )
+direccion = Vector2( -2, 1 )
 
 [node name="MeteoritoSpawner4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 470.878, 428.82 )
+position = Vector2( 785.257, 138.31 )
+direccion = Vector2( -2, -1 )
 
 [node name="MeteoritoSpawner5" parent="." instance=ExtResource( 5 )]
-position = Vector2( 506.554, 93.4633 )
+position = Vector2( 1596.95, 364.481 )
+direccion = Vector2( -2, -1 )
+
+[node name="MeteoritoSpawner6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 178.759, 118.191 )
+direccion = Vector2( 2, -1 )
+
+[node name="MeteoritoSpawner7" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1182.02, 414.663 )
+direccion = Vector2( 2, -1 )
+
+[node name="MeteoritoSpawner8" parent="." instance=ExtResource( 5 )]
+position = Vector2( 223.988, 607.611 )
+direccion = Vector2( 2, 1 )

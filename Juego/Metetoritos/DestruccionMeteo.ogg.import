@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/DestruccionMeteo.ogg-599f2c42c9c35ea8958e29c5b60f793a.oggstr"
+
+[deps]
+
+source_file="res://Juego/Metetoritos/DestruccionMeteo.ogg"
+dest_files=[ "res://.import/DestruccionMeteo.ogg-599f2c42c9c35ea8958e29c5b60f793a.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
