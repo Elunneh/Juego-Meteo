@@ -255,19 +255,19 @@ shape = SubResource( 8 )
 
 [node name="MeteoritoSpawner" parent="Spawners" instance=ExtResource( 1 )]
 position = Vector2( -1150, 0 )
-direccion = Vector2( -2, 0 )
+direccion = Vector2( -2, 1 )
 
 [node name="MeteoritoSpawner2" parent="Spawners" instance=ExtResource( 1 )]
 position = Vector2( 1150, 0 )
-direccion = Vector2( 2, 0 )
+direccion = Vector2( -2, 1 )
 
 [node name="MeteoritoSpawner3" parent="Spawners" instance=ExtResource( 1 )]
 position = Vector2( -4, -750 )
-direccion = Vector2( 0, 1 )
+direccion = Vector2( 2, 1 )
 
 [node name="MeteoritoSpawner4" parent="Spawners" instance=ExtResource( 1 )]
 position = Vector2( 0, 750 )
-direccion = Vector2( 1, 0 )
+direccion = Vector2( 2, -1 )
 
 [node name="MeteoritoSpawner5" parent="Spawners" instance=ExtResource( 1 )]
 position = Vector2( -1150, -750 )
@@ -359,8 +359,4 @@ anims/advertencia = SubResource( 11 )
 stream = ExtResource( 3 )
 volume_db = -37.144
 bus = "SFX"
-[connection signal="body_entered" from="DetectorFueraZona/DetectorIzquierda" to="." method="_on_DetectorIzquierda_body_entered"]
-[connection signal="body_entered" from="DetectorFueraZona/DetectorDerecho" to="." method="_on_DetectorDerecho_body_entered"]
-[connection signal="body_entered" from="DetectorFueraZona/DetectorSuperior" to="." method="_on_DetectorSuperior_body_entered"]
-[connection signal="body_entered" from="DetectorFueraZona/DetectorInferior" to="." method="_on_DetectorInferior_body_entered"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]

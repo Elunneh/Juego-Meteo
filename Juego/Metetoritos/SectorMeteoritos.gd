@@ -2,8 +2,9 @@ class_name SectorMeteoritos
 extends Node2D
 
 #Atributos Export
-export var cantidad_meteoritos: int = 10
-export var intervalo_spawn: float = 1.2
+export var cantidad_meteoritos: int = 16
+
+export var intervalo_spawn: float = 0.5
 #Atributos
 var spawners:Array
 
@@ -55,17 +56,8 @@ func _on_SpawnTimer_timeout()->void:
 		
 
 
-func _on_DetectorIzquierda_body_entered(body: Node)->void:
+func _on_body_entered(body: Node)->void:
 	body.set_esta_en_sector(false)
 
 
-func _on_DetectorDerecho_body_entered(body: Node)-> void:
-	body.set_esta_en_sector(false)
 
-
-func _on_DetectorSuperior_body_entered(body: Node)-> void:
-	body.set_esta_en_sector(false)
-
-
-func _on_DetectorInferior_body_entered(body)-> void:
-	body.set_esta_en_sector(false)

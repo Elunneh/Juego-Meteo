@@ -417,6 +417,7 @@ angular_damp = 0.0
 script = ExtResource( 1 )
 vel_lineal_base = Vector2( 150, 150 )
 vel_ang_base = 3.0
+hitpoints_base = 5.0
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )

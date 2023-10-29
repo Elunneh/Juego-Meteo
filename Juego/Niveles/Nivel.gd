@@ -68,17 +68,27 @@ func crear_sector_meteoritos(centro_camara:Vector2, numero_peligros: int)->void:
 	var new_sector_meteoritos: SectorMeteoritos = sector_meteoritos.instance()
 	new_sector_meteoritos.crear (centro_camara, numero_peligros)
 	camara_nivel.global_position = centro_camara
+	
 	contenedor_sector_meteoritos.add_child(new_sector_meteoritos)
-	transicion_camaras($Player/CamaraPlayer.global_position, camara_nivel.global_position, camara_nivel)
+	camara_nivel.zoom = $Player/CamaraPlayer.zoom
+	
+	camara_nivel.devolver_zoom_original()
+	transicion_camaras($Player/CamaraPlayer.global_position, camara_nivel.global_position, camara_nivel, tiempo_transicion_camara)
 
 func controlar_meteoritos_restantes()->void:
 	meteoritos_totales -= 1
 	print(meteoritos_totales)
 	if meteoritos_totales == 0:
-		transicion_camaras(camara_nivel.global_position,$Player/CamaraPlayer.global_position, $Player/CamaraPlayer)
+		contenedor_sector_meteoritos.get_child(0).queue_free()
+		$Player/CamaraPlayer.set_puede_hacer_zoom(true)
+		var zoom_actual = $Player/CamaraPlayer.zoom
+		$Player/CamaraPlayer.zoom = camara_nivel.zoom
+		$Player/CamaraPlayer.zoom_suavisado(zoom_actual.x, zoom_actual.y,1.0 )
+		
+		transicion_camaras(camara_nivel.global_position,$Player/CamaraPlayer.global_position, $Player/CamaraPlayer, tiempo_transicion_camara * 0.10)
 	
-func transicion_camaras(desde: Vector2, hasta: Vector2, camara_actual: Camera2D)->void: 
-	$TweenCamara.interpolate_property(camara_actual,"global_position", desde, hasta, tiempo_transicion_camara,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT  )
+func transicion_camaras(desde: Vector2, hasta: Vector2, camara_actual: Camera2D, tiempo_transicion:float)->void: 
+	$TweenCamara.interpolate_property(camara_actual,"global_position", desde, hasta, tiempo_transicion,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT  )
 	camara_actual.current = true
 	$TweenCamara.start()
 
@@ -104,3 +114,9 @@ func _on_meteorito_destruido(pos: Vector2)-> void:
 	
 	controlar_meteoritos_restantes()
 
+
+
+func _on_TweenCamara_tween_completed(object: Object, _key: NodePath )->void:
+	if object.name == "CamaraPlayer":
+		object.global_position = $Player.global_position
+	

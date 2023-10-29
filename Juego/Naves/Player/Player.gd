@@ -120,7 +120,7 @@ func player_input() -> void:
 		canion.set_esta_disparando(true)
 	if Input. is_action_just_released("disparo_principal"):
 		canion.set_esta_disparando(false)
-		print("estoy disparando mama")
+		
 		
 
 ## Destruccion
