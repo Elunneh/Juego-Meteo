@@ -7,6 +7,11 @@ export var intervalo_spawn: float = 1.2
 #Atributos
 var spawners:Array
 
+##contructor
+func crear(pos: Vector2, meteoritos:int)->void:
+	global_position = pos
+	cantidad_meteoritos = meteoritos
+
 ##Metodos
 func _ready()-> void:
 	$SpawnTimer.wait_time = intervalo_spawn

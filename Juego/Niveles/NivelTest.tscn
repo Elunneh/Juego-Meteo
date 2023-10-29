@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Juego/Naves/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://default_env.tres" type="Environment" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Juego/Metetoritos/ExplosionMeteorito.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Juego/Niveles/Fondos/violeta.png" type="Texture" id=8]
 [ext_resource path="res://Juego/Metetoritos/SectorMeteoritos.tscn" type="PackedScene" id=9]
+[ext_resource path="res://icon.png" type="Texture" id=10]
 
 [node name="NivelTest" type="Node2D"]
 script = ExtResource( 3 )
@@ -24,12 +25,20 @@ position = Vector2( 873.876, 475.856 )
 environment = ExtResource( 2 )
 
 [node name="Fondo" type="Sprite" parent="."]
-position = Vector2( 956.459, 543.037 )
-scale = Vector2( 8.01929, 4.59646 )
+position = Vector2( 1224.73, 543.037 )
+scale = Vector2( 10.1152, 4.59646 )
 texture = ExtResource( 8 )
 
 [node name="TriggersLluviaMeteoritos" type="Node" parent="."]
 
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" instance=ExtResource( 5 )]
-position = Vector2( 1206.42, 477.531 )
+position = Vector2( 1587.39, 490.23 )
 tipo_peligro = "Meteorito"
+
+[node name="CamaraNivel" type="Camera2D" parent="."]
+
+[node name="TweenCamara" type="Tween" parent="."]
+
+[node name="icon" type="Sprite" parent="."]
+position = Vector2( 909.333, 239.336 )
+texture = ExtResource( 10 )

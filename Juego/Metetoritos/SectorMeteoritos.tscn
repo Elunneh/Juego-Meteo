@@ -136,6 +136,20 @@ tracks/3/keys = {
 "update": 0,
 "values": [ -12.156, -37.144, -50.65 ]
 }
+tracks/4/type = "method"
+tracks/4/path = NodePath("SpawnTimer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ -1 ],
+"method": "start"
+} ]
+}
 
 [node name="SectorMeteoritos" type="Node2D"]
 script = ExtResource( 2 )
@@ -308,13 +322,12 @@ rotating = true
 current = true
 
 [node name="SpawnTimer" type="Timer" parent="."]
-autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 visible = false
-modulate = Color( 1, 1, 1, 0.0196078 )
+modulate = Color( 1, 1, 1, 0.410164 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.603922, 0.0980392, 0.0980392, 1 )
@@ -344,7 +357,7 @@ anims/advertencia = SubResource( 11 )
 
 [node name="AdvertenciaSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -50.65
+volume_db = -37.144
 bus = "SFX"
 [connection signal="body_entered" from="DetectorFueraZona/DetectorIzquierda" to="." method="_on_DetectorIzquierda_body_entered"]
 [connection signal="body_entered" from="DetectorFueraZona/DetectorDerecho" to="." method="_on_DetectorDerecho_body_entered"]
