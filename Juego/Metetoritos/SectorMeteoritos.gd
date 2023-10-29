@@ -3,12 +3,13 @@ extends Node2D
 
 #Atributos Export
 export var cantidad_meteoritos: int = 10
-
+export var intervalo_spawn: float = 1.2
 #Atributos
 var spawners:Array
 
 ##Metodos
 func _ready()-> void:
+	$SpawnTimer.wait_time = intervalo_spawn
 	almacenar_spawners()
 	conectar_seniales_detectores()
 	

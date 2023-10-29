@@ -5,10 +5,13 @@ extends Node2D
 export var explosion:PackedScene = null
 export var meteorito:PackedScene = null
 export var explosion_meteorito: PackedScene = null
+export var sector_meteoritos: PackedScene = null
+
 
 #Atributos Onready
 onready var contenedor_proyectiles:Node
 onready var contenedor_meteoritos:Node
+onready var contenedor_sector_meteoritos: Node
 
 #Metodos
 
@@ -20,9 +23,10 @@ func _ready()-> void:
 func conectar_seniales()-> void:
 	Eventos.connect("disparo", self, "_on_disparo")
 	Eventos.connect("nave_destruida", self, "_on_nave_destruida")
+	Eventos.connect("nave_en_sector_peligro", self, "_on_nave_en_sector_peligro")
 	Eventos.connect("spawn_meteorito", self, "_on_spawn_meteoritos")
 	Eventos.connect("meteorito_destruido", self, "_on_meteorito_destruido")
-	
+
 func crear_contenedores()-> void:
 	contenedor_proyectiles = Node.new()
 	contenedor_proyectiles.name = "ContenedorProyectiles"
@@ -32,10 +36,34 @@ func crear_contenedores()-> void:
 	contenedor_meteoritos.name = "ContenedorMeteoritos"
 	add_child(contenedor_meteoritos)
 	
+	contenedor_sector_meteoritos = Node.new()
+	contenedor_sector_meteoritos.name = "ContenedorSectorMeteoritos"
+	add_child(contenedor_sector_meteoritos)
+	
+
+	
 ##Conexion de externas
+
+
+func _on_nave_en_sector_peligro(centro_cam: Vector2, tipo_peligro: String, num_peligros: int)-> void:
+	if tipo_peligro == "Meteorito":
+		crear_sector_meteoritos(centro_cam, num_peligros)
+	elif tipo_peligro == "Enemigo":
+		pass
+	
+	
+	
 	
 func _on_disparo(proyectil:Proyectil) -> void:
 	contenedor_proyectiles.add_child(proyectil)
+	
+	
+
+	
+func crear_sector_meteoritos(centro_camara:Vector2, numero_peligros: int)->void:
+	var new_sector_meteoritos: SectorMeteoritos = sector_meteoritos.instance()
+	new_sector_meteoritos.global_position = centro_camara
+	contenedor_sector_meteoritos.add_child(new_sector_meteoritos)
 
 func _on_nave_destruida(posicion: Vector2, num_explosiones:int) -> void:
 	for i in range (num_explosiones):
