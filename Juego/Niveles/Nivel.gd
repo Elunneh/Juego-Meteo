@@ -112,5 +112,4 @@ func _on_meteorito_destruido(pos: Vector2)-> void:
 
 func _on_TweenCamara_tween_completed(object: Object, _key: NodePath )->void:
 	if object.name == "CamaraPlayer":
-		object.global_position = $Player.global_position
-	
+		object.global_position = $Player.global_positio

@@ -18,5 +18,3 @@ func _on_body_entered(body: Node)->void:
 func enviar_senial()-> void:
 	Eventos.emit_signal("nave_en_sector_peligro", $PositionCentroSector.global_position, tipo_peligro, numero_peligros)
 	queue_free()
-	
-	

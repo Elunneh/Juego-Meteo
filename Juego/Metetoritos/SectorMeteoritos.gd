@@ -58,6 +58,3 @@ func conectar_seniales_detectores()-> void:
 
 func _on_detector_body_entered(body: Node)->void:
 	body.set_esta_en_sector(false)
-
-
-
