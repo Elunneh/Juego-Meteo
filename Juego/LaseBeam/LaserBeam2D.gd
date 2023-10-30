@@ -8,9 +8,14 @@ export var max_length : float = 1400.0
 
 export var growth_time : float = 0.1
 
+export var radio_danio: float = 4.0
+export var energia: float = 4.0
+export var radio_desgaste: float = -1.0
+
+
 
 var is_casting : bool = false setget set_is_casting
-var radio_danio: float
+
 
 onready var fill : Line2D = $FillLine2D
 onready var tween : Tween = $Tween
@@ -27,7 +32,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	cast_to = (cast_to + Vector2.RIGHT * cast_speed * delta).clamped(max_length)
-	cast_beam()
+	cast_beam(delta)
 
 func set_is_casting(cast: bool) -> void:
 	is_casting = cast
@@ -49,7 +54,15 @@ func set_is_casting(cast: bool) -> void:
 	casting_particles.emitting = is_casting
 
 
-func cast_beam() -> void:
+func cast_beam(delta: float) -> void:
+	if is_casting:
+		if energia <= 0.0:
+			print("SIN ENERGIA")
+			set_is_casting(false)
+			return
+		energia += radio_desgaste * delta
+		
+	
 	var cast_point : Vector2 = cast_to
 	
 

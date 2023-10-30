@@ -61,7 +61,7 @@ scale_curve = SubResource( 4 )
 color_ramp = SubResource( 2 )
 
 [sub_resource type="CapsuleShape2D" id=10]
-radius = 5.54403
+radius = 5.52926
 height = 103.072
 
 [node name="LaserBeam2D" type="RayCast2D"]
