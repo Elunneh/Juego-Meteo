@@ -22,9 +22,7 @@ func _ready()-> void:
 	
 #Metodos Customs
 
-func conectar_seniales_detectores()-> void:
-	for detector in $DetectorFueraZona.get_children():
-		detector.connect("body_entered",self,"_on_detector_body_entered" )
+
 
 
 
@@ -54,9 +52,11 @@ func _on_SpawnTimer_timeout()->void:
 	
 		
 		
+func conectar_seniales_detectores()-> void:
+	for detector in $DetectorFueraZona.get_children():
+		detector.connect("body_entered",self,"_on_detector_body_entered" )
 
-
-func _on_body_entered(body: Node)->void:
+func _on_detector_body_entered(body: Node)->void:
 	body.set_esta_en_sector(false)
 
 

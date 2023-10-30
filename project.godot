@@ -20,6 +20,11 @@ _global_script_classes=[ {
 "path": "res://Juego/Niveles/CamaraJuego.gd"
 }, {
 "base": "CamaraJuego",
+"class": "CamaraNivel",
+"language": "GDScript",
+"path": "res://Juego/Niveles/CamaraNivel.gd"
+}, {
+"base": "CamaraJuego",
 "class": "CamaraPlayer",
 "language": "GDScript",
 "path": "res://Juego/Naves/Player/CamaraPlayer.gd"
@@ -97,6 +102,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "AreaColision": "",
 "CamaraJuego": "",
+"CamaraNivel": "",
 "CamaraPlayer": "",
 "Canion": "",
 "Dummy": "",
