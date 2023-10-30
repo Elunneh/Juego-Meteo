@@ -6,6 +6,7 @@ export var variacion_zoom: float = 0.1
 export var zoom_minimo: float =  0.8
 export var zoom_maximo: float = 1.5
 
+
 ##Metodos
 
 func _unhandled_input(event: InputEvent)->void:
@@ -18,4 +19,21 @@ func _unhandled_input(event: InputEvent)->void:
 func controlar_zoom(mod_zoom: float)-> void:
 	var zoom_x = clamp(zoom.x + mod_zoom, zoom_minimo, zoom_maximo)
 	var zoom_y = clamp(zoom.y + mod_zoom, zoom_minimo, zoom_maximo)
-	zoom_suavisado (zoom.x, zoom.y,0.15 )
+	zoom_suavisado (zoom_x, zoom_y,0.15 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+

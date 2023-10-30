@@ -27,3 +27,18 @@ func devolver_zoom_original()->void:
 func zoom_suavisado(nuevo_zoom_x: float, nuevo_zoom_y: float, tiempo_transicion: float)-> void:
 	tween_zoom.interpolate_property(self, "zoom", zoom, Vector2(nuevo_zoom_x, nuevo_zoom_y), tiempo_transicion, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween_zoom.start()
+
+
+
+
+
+		
+
+
+
+
+	
+
+
+
+
