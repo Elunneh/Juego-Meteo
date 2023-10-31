@@ -90,8 +90,8 @@ func controlador_estados(nuevo_estado: int)-> void:
 			colisionador.set_deferred("disabled", true)
 		ESTADO.MUERTO:
 			colisionador.set_deferred("disabled", true)
-			canion.set_puede_disparar(true)
-			Eventos.emit_signal("nave_destruida", global_position)
+			canion.set_puede_disparar(false)
+			Eventos.emit_signal("nave_destruida", self, global_position)
 			queue_free()
 		_:
 			printerr("Error de Estado")
@@ -132,14 +132,14 @@ func player_input() -> void:
 ## Destruccion
 func destruir() -> void:
 	controlador_estados(ESTADO.MUERTO)
-	Eventos.emit_signal("nave_destruida", global_position, 3)
+	Eventos.emit_signal("nave_destruida", self, global_position, 3)
 	queue_free()
 
 
 func recibir_danio(danio:float)-> void:
 	hitpoints -= danio
 	if hitpoints <= 0.0:
-		Eventos.emit_signal("nave_destruida", global_position, 3)
+		Eventos.emit_signal("nave_destruida",self, global_position, 3)
 		
 		controlador_estados(ESTADO.MUERTO)
 		impacto_sfx.play() 
