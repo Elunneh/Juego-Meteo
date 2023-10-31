@@ -31,6 +31,7 @@ func _integrate_forces(state: Physics2DDirectBodyState)->void:
 
 func _ready()-> void:
 	
+	
 	angular_velocity = vel_ang_base
 
 

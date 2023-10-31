@@ -10,11 +10,11 @@
 radius = 87.0
 height = 124.0
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 497.196
-
 [sub_resource type="CircleShape2D" id=3]
 radius = 496.88
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 497.196
 
 [sub_resource type="Animation" id=4]
 length = 0.001
@@ -199,14 +199,6 @@ gravity_point = true
 gravity = 1000.0
 collision_layer = 0
 
-[node name="RigidBody2D" type="RigidBody2D" parent="AreaRecarga"]
-collision_layer = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaRecarga/RigidBody2D"]
-modulate = Color( 0.192157, 0.00784314, 0.262745, 1 )
-z_as_relative = false
-shape = SubResource( 2 )
-
 [node name="SpriteRecarga" type="Sprite" parent="AreaRecarga"]
 modulate = Color( 0.0313726, 1, 0.380392, 0.109804 )
 self_modulate = Color( 0.941176, 0.913725, 0.972549, 1 )
@@ -217,6 +209,17 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaRecarga"]
 shape = SubResource( 3 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="AreaRecarga"]
+collision_layer = 0
+collision_mask = 0
+mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaRecarga/RigidBody2D"]
+modulate = Color( 0.192157, 0.00784314, 0.262745, 1 )
+light_mask = -2147483647
+z_as_relative = false
+shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Recargando"

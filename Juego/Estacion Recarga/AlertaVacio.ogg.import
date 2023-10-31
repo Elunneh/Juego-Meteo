@@ -11,5 +11,5 @@ dest_files=[ "res://.import/AlertaVacio.ogg-e40d5c6b39f0598f77c6242f1d423cdd.ogg
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
