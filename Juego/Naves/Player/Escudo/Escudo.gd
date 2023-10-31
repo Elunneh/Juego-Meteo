@@ -18,11 +18,18 @@ func _ready()-> void:
 	controlar_colisionador(true)
 	
 func _process(delta:float)-> void:
-	energia += radio_desgaste * delta
-	if energia <= 0.0:
-		desactivar()
+	controlar_energia (radio_desgaste * delta)
 	
 ##metodos customs
+
+func controlar_energia(consumo: float)-> void:
+	energia += consumo
+	print("Energia Escudo: ", energia)
+	if energia <= 0.0 :
+		desactivar()
+
+
+
 func controlar_colisionador(esta_desactivado : bool)-> void:
 	$CollisionShape2D.set_deferred("disabled", esta_desactivado)
 

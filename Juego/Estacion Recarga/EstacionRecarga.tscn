@@ -1,0 +1,237 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Juego/Estacion Recarga/spaceStation.png" type="Texture" id=1]
+[ext_resource path="res://Juego/Estacion Recarga/ZonaRecarga.png" type="Texture" id=2]
+[ext_resource path="res://Juego/Estacion Recarga/AlertaVacio.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Juego/Estacion Recarga/recargando.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Juego/Estacion Recarga/EstacionRecarga.gd" type="Script" id=5]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 87.0
+height = 124.0
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 497.196
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 496.88
+
+[sub_resource type="Animation" id=3]
+resource_name = "Default"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AreaColision/SpriteEstacion:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AreaColision/SpriteEstacion:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AreaColision/SpriteEstacion:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AreaRecarga/SpriteRecarga:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AreaRecarga/SpriteRecarga:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("AreaRecarga/SpriteRecarga:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Recargando"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AreaColision/SpriteEstacion:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AreaColision/SpriteEstacion:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AreaColision/SpriteEstacion:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AreaRecarga/SpriteRecarga:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -3.8147e-06, -11.3137 ), Vector2( -3.8147e-06, -11.3137 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AreaRecarga/SpriteRecarga:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -360.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("AreaRecarga/SpriteRecarga:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 3, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 40.6211, 38.0849 ), Vector2( 50, 50 ), Vector2( 37.8106, 36.5425 ), Vector2( 40.6211, 38.0849 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("AreaColision/CollisionShape2D:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+
+[node name="EstacionRecarga" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="AreaColision" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="SpriteEstacion" type="Sprite" parent="AreaColision"]
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaColision"]
+shape = SubResource( 1 )
+
+[node name="AreaRecarga" type="Area2D" parent="."]
+space_override = 1
+gravity_point = true
+gravity = 1000.0
+collision_layer = 0
+
+[node name="RigidBody2D" type="RigidBody2D" parent="AreaRecarga"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaRecarga/RigidBody2D"]
+shape = SubResource( 5 )
+
+[node name="SpriteRecarga" type="Sprite" parent="AreaRecarga"]
+modulate = Color( 0.0313726, 1, 0.380392, 0.109804 )
+self_modulate = Color( 0.941176, 0.913725, 0.972549, 1 )
+position = Vector2( -3.8147e-06, -11.3137 )
+scale = Vector2( 40.6211, 38.0849 )
+z_as_relative = false
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaRecarga"]
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Recargando"
+anims/Default = SubResource( 3 )
+anims/Recargando = SubResource( 4 )
+
+[node name="CargaSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -19.576
+bus = "SFX"
+
+[node name="VacioSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -25.082
+bus = "SFX"
+[connection signal="body_entered" from="AreaColision" to="." method="_on_AreaColision_body_entered"]
+[connection signal="body_entered" from="AreaRecarga" to="." method="_on_AreaRecarga_body_entered"]
+[connection signal="body_exited" from="AreaRecarga/RigidBody2D" to="." method="_on_AreaRecarga_body_exited"]

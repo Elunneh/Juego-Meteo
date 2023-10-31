@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/AlertaVacio.ogg-e40d5c6b39f0598f77c6242f1d423cdd.oggstr"
+
+[deps]
+
+source_file="res://Juego/Estacion Recarga/AlertaVacio.ogg"
+dest_files=[ "res://.import/AlertaVacio.ogg-e40d5c6b39f0598f77c6242f1d423cdd.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
