@@ -106,5 +106,5 @@ script = ExtResource( 11 )
 [node name="TweenCamara" type="Tween" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -347.738, -715.635 )
+position = Vector2( 1678.21, 181.429 )
 [connection signal="tween_completed" from="TweenCamara" to="." method="_on_TweenCamara_tween_completed"]
