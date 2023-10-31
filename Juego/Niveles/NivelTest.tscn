@@ -95,9 +95,6 @@ tipo_peligro = "Meteorito"
 [node name="EstacionRecarga" parent="ContenedorEstaciones" instance=ExtResource( 12 )]
 position = Vector2( 412.95, 497.803 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 873.876, 475.856 )
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 2 )
 
@@ -107,4 +104,7 @@ script = ExtResource( 11 )
 [node name="TweenZoom" type="Tween" parent="CamaraNivel"]
 
 [node name="TweenCamara" type="Tween" parent="."]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -347.738, -715.635 )
 [connection signal="tween_completed" from="TweenCamara" to="." method="_on_TweenCamara_tween_completed"]
