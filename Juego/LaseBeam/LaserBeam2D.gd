@@ -15,7 +15,7 @@ export var radio_desgaste: float = -1.0
 
 
 var is_casting : bool = false setget set_is_casting
-
+var energia_original: float
 
 onready var fill : Line2D = $FillLine2D
 onready var tween : Tween = $Tween
@@ -27,6 +27,7 @@ onready var laser_sfx: AudioStreamPlayer2D = $LaserSFX
 onready var line_width : float = fill.width
 
 func _ready() -> void:
+	energia_original = energia
 	set_physics_process(false)
 	fill.points[1] = Vector2.ZERO
 
@@ -82,7 +83,9 @@ func cast_beam(delta: float) -> void:
 	beam_particles.process_material.emission_box_extents.x = cast_point.length() * 0.5
 	
 func controlar_energia(consumo: float)-> void:
-	energia+= consumo
+	energia += consumo
+	if energia >  energia_original:
+		energia = energia_original
 	print("Energia Laser: ",energia )
 
 func appear() -> void:

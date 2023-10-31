@@ -7,13 +7,26 @@ export var radio_energia_entregada: float = 0.05
 
 ##Atributos
 var nave_player: Player = null
+var player_en_zona:bool = false
 
 ## Metodos
 func _unhandled_input(event: InputEvent)-> void:
-	if event. is_action("recargar_escudo"):
+	if not puede_recargar(event):
+		return
+	energia -= radio_energia_entregada
+	print("Energia Estacion:", energia )
+	
+	if event. is_action("recarga_escudo"):
 		nave_player.get_escudo().controlar_energia(radio_energia_entregada)
 	elif event.is_action("recarga_laser"):
 		nave_player.get_laser().controlar_energia(radio_energia_entregada)
+
+## Metodo Customs
+func puede_recargar(event: InputEvent) -> bool:
+	var hay_input = event.is_action("recarga_escudo") or event.is_action("recarga_laser")
+	if hay_input and player_en_zona and energia > 0.0:
+		return true
+	return false
 
 
 ##Señales Internas
@@ -25,9 +38,15 @@ func _on_AreaColision_body_entered(body: Node)-> void:
 
 func _on_AreaRecarga_body_entered(body: Node)-> void:
 	if body is Player:
+		player_en_zona = true
 		nave_player = body
 	body.set_gravity_scale(0.1)
 
 
 func _on_AreaRecarga_body_exited(body: Node)-> void:
+	if body is Player:
+		player_en_zona = false
+		nave_player = body
+	
+	
 	body.set_gravity_scale(0.0)
