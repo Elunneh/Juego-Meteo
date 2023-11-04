@@ -87,7 +87,7 @@ texture = ExtResource( 8 )
 [node name="TriggersLluviaMeteoritos" type="Node" parent="."]
 
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" instance=ExtResource( 5 )]
-position = Vector2( 2215.3, 190.417 )
+position = Vector2( 2225.38, -671.37 )
 tipo_peligro = "Meteorito"
 
 [node name="ContenedorEstaciones" type="Node" parent="."]
