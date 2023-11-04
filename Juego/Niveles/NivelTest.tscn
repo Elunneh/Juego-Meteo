@@ -96,10 +96,11 @@ tipo_peligro = "Meteorito"
 [node name="ContenedorEstaciones" type="Node" parent="."]
 
 [node name="EstacionRecarga" parent="ContenedorEstaciones" instance=ExtResource( 12 )]
-position = Vector2( 2881.74, -1019.63 )
+position = Vector2( -475.164, -1846.38 )
+rotation = 2.73641
 
 [node name="BaseEnemiga" parent="ContenedorEstaciones" instance=ExtResource( 13 )]
-position = Vector2( 1969.33, -33.2977 )
+position = Vector2( 2781.83, -1480.12 )
 
 [node name="TriggersInterseptores" type="Node" parent="."]
 

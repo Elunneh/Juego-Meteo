@@ -166,10 +166,8 @@ rotation = 1.5708
 shape = SubResource( 6 )
 
 [node name="AreaAtraccion" parent="." instance=ExtResource( 1 )]
-visible = false
 
 [node name="SpriteZonaRecarga" type="Sprite" parent="."]
-visible = false
 modulate = Color( 1, 1, 1, 0.0196078 )
 position = Vector2( 6, -45 )
 texture = ExtResource( 6 )
