@@ -16,6 +16,10 @@ onready var estela:Estela = $EstelaPuntoInicio/Trail2D
 onready var motor_sfx: Motor = $MotorSFX
 onready var escudo: Escudo = $Escudo setget, get_escudo
 
+##metodos
+func _ready()->void:
+	DatosJuego.set_player_actual(self)
+
 ##Setter y Getter
 
 func get_laser() -> RayoLaser:
