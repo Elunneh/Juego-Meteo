@@ -89,18 +89,18 @@ texture = ExtResource( 8 )
 [node name="TriggersLluviaMeteoritos" type="Node" parent="."]
 
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" instance=ExtResource( 5 )]
-position = Vector2( -154.253, -673.071 )
+position = Vector2( 254.834, -1067.89 )
 tipo_peligro = "Meteorito"
 
 [node name="ContenedorEstaciones" type="Node" parent="."]
 
 [node name="EstacionRecarga" parent="ContenedorEstaciones" instance=ExtResource( 12 )]
-position = Vector2( -1223.4, -686.647 )
+position = Vector2( 2268.11, -77.7726 )
 
 [node name="TriggersInterseptores" type="Node" parent="."]
 
 [node name="SectorDePeligro" parent="TriggersInterseptores" instance=ExtResource( 5 )]
-position = Vector2( -789.634, 1003.69 )
+position = Vector2( 1317.64, -1017.96 )
 tipo_peligro = "Enemigo"
 numero_peligros = 2
 
@@ -116,10 +116,4 @@ script = ExtResource( 11 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1148.54, -76.8954 )
-
-[node name="EnemigoInterceptor" parent="." instance=ExtResource( 10 )]
-position = Vector2( 2002.62, 580.333 )
-
-[node name="EnemigoInterceptor2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1212.99, -675.469 )
 [connection signal="tween_completed" from="TweenCamara" to="." method="_on_TweenCamara_tween_completed"]

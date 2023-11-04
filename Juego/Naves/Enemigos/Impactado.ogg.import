@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Impactado.ogg-61fea2d30d0af71049da3c1849a7f70d.oggstr"
+
+[deps]
+
+source_file="res://Juego/Naves/Enemigos/Impactado.ogg"
+dest_files=[ "res://.import/Impactado.ogg-61fea2d30d0af71049da3c1849a7f70d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
