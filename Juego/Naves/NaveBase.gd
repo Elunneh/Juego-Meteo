@@ -57,12 +57,13 @@ func recibir_danio(danio:float)-> void:
 		impacto_sfx.play() 
 		queue_free()
 
+##Señales internas
 
 func _on_AnimationPlayer_animation_finished(anim_name: String)-> void:
 	if anim_name == "Spawn":
 		controlador_estados(ESTADO.VIVO)
 
-func _on_body_entered(body):
+func _on_body_entered(body: Node)-> void:
 	if body is Meteoritos:
 		body.destruir()
 		destruir()

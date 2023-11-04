@@ -39,6 +39,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Juego/Naves/Enemigos/EnemigoDummy.gd"
 }, {
+"base": "NaveBase",
+"class": "EnemigoBase",
+"language": "GDScript",
+"path": "res://Juego/Naves/Enemigos/EnemigoInterceptor.gd"
+}, {
 "base": "Area2D",
 "class": "Escudo",
 "language": "GDScript",
@@ -116,6 +121,7 @@ _global_script_class_icons={
 "CamaraPlayer": "",
 "Canion": "",
 "Dummy": "",
+"EnemigoBase": "",
 "Escudo": "",
 "EstacionRecarga": "",
 "Estela": "",

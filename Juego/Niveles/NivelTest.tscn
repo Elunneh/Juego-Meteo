@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Juego/Naves/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://default_env.tres" type="Environment" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Juego/Metetoritos/ExplosionMeteorito.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Juego/Niveles/Fondos/purple500x500.png" type="Texture" id=8]
 [ext_resource path="res://Juego/Metetoritos/SectorMeteoritos.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Juego/Naves/Enemigos/EnemigoInterceptor.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Juego/Niveles/CamaraNivel.gd" type="Script" id=11]
 [ext_resource path="res://Juego/Estacion Recarga/EstacionRecarga.tscn" type="PackedScene" id=12]
 
@@ -87,7 +88,7 @@ texture = ExtResource( 8 )
 [node name="TriggersLluviaMeteoritos" type="Node" parent="."]
 
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" instance=ExtResource( 5 )]
-position = Vector2( 2225.38, -671.37 )
+position = Vector2( 2208.41, 171.501 )
 tipo_peligro = "Meteorito"
 
 [node name="ContenedorEstaciones" type="Node" parent="."]
@@ -106,5 +107,8 @@ script = ExtResource( 11 )
 [node name="TweenCamara" type="Tween" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1678.21, 181.429 )
+position = Vector2( 1690.21, 165.429 )
+
+[node name="EnemigoInterceptor" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2220.09, -83.8954 )
 [connection signal="tween_completed" from="TweenCamara" to="." method="_on_TweenCamara_tween_completed"]
