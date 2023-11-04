@@ -7,6 +7,7 @@ radius = 4.92108
 height = 29.6991
 
 [node name="ProyectilPlayer" instance=ExtResource( 1 )]
+collision_mask = 38
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource( 1 )

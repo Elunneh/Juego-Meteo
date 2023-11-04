@@ -7,10 +7,18 @@ export var hitpoints : float = 30.0
 
 ##Antributo Onready
 
+onready var impacto_sfx: AudioStreamPlayer = $ImpactoSFX
 
+#Atributos
+
+var esta_destruida: bool = false
+
+#Metodos
 
 func _ready()-> void:
 	$AnimationPlayer.play(elegir_animacion_aleatoria())
+	
+#Metodos Customs
 	
 func elegir_animacion_aleatoria()-> String:
 	randomize()
@@ -20,3 +28,20 @@ func elegir_animacion_aleatoria()-> String:
 	
 	return lista_animacion[indice_anim_aleatoria]
 
+func recibir_danio(danio: float)-> void:
+	hitpoints -= danio
+	
+	if hitpoints <= 0 and not esta_destruida:
+		esta_destruida = true
+		destruir()
+	impacto_sfx.play()
+
+func destruir()-> void:
+	var posicion_partes = [$Sprites/SpriteA.global_position, $Sprites/SpriteB.global_position, $Sprites/SpriteC.global_position, $Sprites/SpriteD.global_position]
+
+	Eventos.emit_signal("base_destruida", posicion_partes)
+	queue_free()
+
+func _on_AreaColision_body_entered(body: Node)-> void:
+	if body.has_method("destruir"):
+		body.destruir()

@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "AreaColision",
 "language": "GDScript",
-"path": "res://Juego/Naves/Enemigos/Area2D.gd"
+"path": "res://Juego/Naves/Enemigos/AreaColision.gd"
 }, {
 "base": "Node2D",
 "class": "BaseEnemiga",
@@ -160,7 +160,7 @@ _global_script_class_icons={
 
 config/name="Meteoritos_GAME"
 run/main_scene="res://Juego/Niveles/NivelTest.tscn"
-config/icon="res://iconoMeteo.png"
+config/icon="res://Juego/iconoMeteo.png"
 
 [autoload]
 
@@ -243,6 +243,7 @@ recarga_escudo={
 2d_physics/layer_3="Meteorito"
 2d_physics/layer_4="Proyectil_player"
 2d_physics/layer_5="Proyectil_enemigo"
+2d_physics/layer_6="base_enemiga"
 
 [rendering]
 

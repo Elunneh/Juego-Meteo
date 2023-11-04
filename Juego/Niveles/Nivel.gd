@@ -27,13 +27,15 @@ func _ready()-> void:
 	player = DatosJuego.get_player_actual()
 	
 #Metodos Custom
+
 func conectar_seniales()-> void:
 	Eventos.connect("disparo", self, "_on_disparo")
 	Eventos.connect("nave_destruida", self, "_on_nave_destruida")
 	Eventos.connect("nave_en_sector_peligro", self, "_on_nave_en_sector_peligro")
 	Eventos.connect("spawn_meteorito", self, "_on_spawn_meteoritos")
 	Eventos.connect("meteorito_destruido", self, "_on_meteorito_destruido")
-
+	Eventos.connect("base_destruida", self,"_on_base_destruida")
+	
 func crear_contenedores()-> void:
 	contenedor_proyectiles = Node.new()
 	contenedor_proyectiles.name = "ContenedorProyectiles"
@@ -124,8 +126,10 @@ func _on_disparo(proyectil:Proyectil) -> void:
 func _on_nave_destruida(nave: Player, posicion: Vector2, num_explosiones:int) -> void:
 	if nave is Player:
 		transicion_camaras(posicion, posicion + crear_posiciones_aleatoria(-200.0, 200.0), camara_nivel, tiempo_transicion_camara )
+		crear_explosion(posicion, num_explosiones, 0.6, Vector2(100.0, 50.0) )
+		
 	
-	
+
 	
 	
 	for i in range (num_explosiones):
@@ -133,7 +137,20 @@ func _on_nave_destruida(nave: Player, posicion: Vector2, num_explosiones:int) ->
 		new_explosion.global_position = posicion + crear_posiciones_aleatoria(100.0, 50.0)
 		add_child(new_explosion)
 		yield(get_tree().create_timer(0.6), "timeout")
-	
+
+func _on_base_destruida(pos_partes:Array )-> void:
+	for position in pos_partes:
+		crear_explosion(position)
+		yield (get_tree().create_timer(0.5),"timeout")
+		
+		
+func crear_explosion(posicion: Vector2, numero:int = 1, intervalo:float = 0.0, rangos_aleatorios: Vector2 = Vector2(0.0, 0.0))-> void:
+	for _i in range(numero):
+		var new_explosion:Node2D = explosion.instance()
+		new_explosion.global_position = posicion + crear_posiciones_aleatoria(rangos_aleatorios.x, rangos_aleatorios.y)
+		add_child(new_explosion)
+		yield(get_tree().create_timer(intervalo), "timeout")
+		
 func _on_spawn_meteoritos(pos_spawn: Vector2, dir_meteorito: Vector2, tamanio:float)-> void:
 	var new_meteorito: Meteoritos = meteorito.instance()
 	new_meteorito.crear(pos_spawn, dir_meteorito, tamanio)

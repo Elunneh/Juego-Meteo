@@ -59,6 +59,7 @@ position = Vector2( -10.9552, 0 )
 [node name="LaserBeam2D" parent="." index="9" instance=ExtResource( 5 )]
 position = Vector2( 33.8461, 0 )
 z_index = -41
+collision_mask = 38
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 
 [editable path="Canion"]

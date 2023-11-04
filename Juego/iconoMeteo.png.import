@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/iconoMeteo.png-4a102cbdcabe0c57f8545cc9d8d04729.stex"
+path="res://.import/iconoMeteo.png-bc2b9a31971df653f0d7d90e091a054b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://iconoMeteo.png"
-dest_files=[ "res://.import/iconoMeteo.png-4a102cbdcabe0c57f8545cc9d8d04729.stex" ]
+source_file="res://Juego/iconoMeteo.png"
+dest_files=[ "res://.import/iconoMeteo.png-bc2b9a31971df653f0d7d90e091a054b.stex" ]
 
 [params]
 
