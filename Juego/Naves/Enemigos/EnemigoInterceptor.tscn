@@ -6,10 +6,10 @@
 [ext_resource path="res://Juego/Naves/Enemigos/EnemigoInterceptor.gd" type="Script" id=4]
 [ext_resource path="res://Juego/Proyectiles/ProyectilEnemigo.tscn" type="PackedScene" id=5]
 
-[sub_resource type="PhysicsMaterial" id=6]
+[sub_resource type="PhysicsMaterial" id=1]
 bounce = 0.5
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=2]
 radius = 82.709
 
 [sub_resource type="Animation" id=3]
@@ -76,8 +76,7 @@ tracks/4/keys = {
 "values": [ true, true ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "default"
+[sub_resource type="Animation" id=4]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("SpriteSpawn:scale")
@@ -140,20 +139,19 @@ tracks/4/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=5]
 radius = 1053.87
 
-[sub_resource type="CircleShape2D" id=5]
-radius = 722.916
+[sub_resource type="CircleShape2D" id=6]
+radius = 863.228
 
 [node name="EnemigoInterceptor" instance=ExtResource( 1 )]
 collision_layer = 2147483650
-collision_mask = 13
-physics_material_override = SubResource( 6 )
+collision_mask = 15
+physics_material_override = SubResource( 1 )
 contacts_reported = 2
 contact_monitor = true
 script = ExtResource( 4 )
-hitpoints = 20.0
 
 [node name="Sprite" parent="." index="0"]
 rotation = -1.5708
@@ -161,9 +159,10 @@ scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" parent="." index="1"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Canion" parent="." index="2"]
+visible = false
 proyectil = ExtResource( 5 )
 cadencia_disparo = 1.2
 velocidad_proyectil = 1200
@@ -178,7 +177,7 @@ position = Vector2( -1.124, 56 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
 autoplay = "Spawn"
 anims/Spawn = SubResource( 3 )
-anims/default = SubResource( 2 )
+anims/default = SubResource( 4 )
 
 [node name="SpriteSpawn" type="Sprite" parent="." index="5"]
 visible = false
@@ -191,15 +190,21 @@ collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDisparo" index="0"]
 visible = false
-shape = SubResource( 4 )
+modulate = Color( 0.0196078, 0.0196078, 0.0196078, 1 )
+shape = SubResource( 5 )
 
 [node name="AreaDeteccion" type="Area2D" parent="." index="7"]
 visible = false
+modulate = Color( 0.309804, 0.988235, 0, 1 )
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDeteccion" index="0"]
 visible = false
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="body_entered" from="AreaDisparo" to="." method="_on_AreaDisparo_body_entered"]
+[connection signal="body_exited" from="AreaDisparo" to="." method="_on_AreaDisparo_body_exited"]
+[connection signal="body_entered" from="AreaDeteccion" to="." method="_on_AreaDeteccion_body_entered"]
+[connection signal="body_exited" from="AreaDeteccion" to="." method="_on_AreaDeteccion_body_exited"]
 
 [editable path="Canion"]
