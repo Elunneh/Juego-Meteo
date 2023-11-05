@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/lowFrequency_explosion_B.ogg-09c52a767efb75f7bc7c2e2ba08ce9e8.oggstr"
+
+[deps]
+
+source_file="res://Juego/Estaciones/lowFrequency_explosion_B.ogg"
+dest_files=[ "res://.import/lowFrequency_explosion_B.ogg-09c52a767efb75f7bc7c2e2ba08ce9e8.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
