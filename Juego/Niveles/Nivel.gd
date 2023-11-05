@@ -35,6 +35,7 @@ func conectar_seniales()-> void:
 	Eventos.connect("spawn_meteorito", self, "_on_spawn_meteoritos")
 	Eventos.connect("meteorito_destruido", self, "_on_meteorito_destruido")
 	Eventos.connect("base_destruida", self,"_on_base_destruida")
+	Eventos.connect("spawn_orbital", self, "_on_spawn_orbital")
 	
 func crear_contenedores()-> void:
 	contenedor_proyectiles = Node.new()
@@ -69,7 +70,8 @@ func _on_nave_en_sector_peligro(centro_cam: Vector2, tipo_peligro: String, num_p
 	elif tipo_peligro == "Enemigo":
 		crear_sector_enemigo(num_peligros)
 	
-	
+func _on_spawn_orbital(enemigo: EnemigoOrbital)->void:
+	contenedor_enemigos.add_child(enemigo)
 
 
 

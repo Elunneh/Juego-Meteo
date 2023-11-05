@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Juego/Naves/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://default_env.tres" type="Environment" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Juego/Niveles/CamaraNivel.gd" type="Script" id=11]
 [ext_resource path="res://Juego/Estacion Recarga/EstacionRecarga.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Juego/Naves/BaseEnemiga.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Juego/Naves/Enemigos/EnemigoOrbital.tscn" type="PackedScene" id=14]
 
 [node name="NivelTest" type="Node2D"]
 script = ExtResource( 3 )
@@ -21,6 +22,9 @@ meteorito = ExtResource( 6 )
 explosion_meteorito = ExtResource( 7 )
 sector_meteoritos = ExtResource( 9 )
 enemigo_interceptor = ExtResource( 10 )
+
+[node name="EnemigoOrbital" parent="." instance=ExtResource( 14 )]
+position = Vector2( 516.125, 2260.99 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_ignore_camera_zoom = true
@@ -90,7 +94,7 @@ texture = ExtResource( 8 )
 [node name="TriggersLluviaMeteoritos" type="Node" parent="."]
 
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" instance=ExtResource( 5 )]
-position = Vector2( 254.834, -1067.89 )
+position = Vector2( 975.269, -2169.73 )
 tipo_peligro = "Meteorito"
 
 [node name="ContenedorEstaciones" type="Node" parent="."]
@@ -99,15 +103,23 @@ tipo_peligro = "Meteorito"
 position = Vector2( -475.164, -1846.38 )
 rotation = 2.73641
 
-[node name="BaseEnemiga" parent="ContenedorEstaciones" instance=ExtResource( 13 )]
-position = Vector2( 2781.83, -1480.12 )
-
 [node name="TriggersInterseptores" type="Node" parent="."]
 
 [node name="SectorDePeligro" parent="TriggersInterseptores" instance=ExtResource( 5 )]
-position = Vector2( 1317.64, -1017.96 )
+position = Vector2( 3004.31, -2162.18 )
 tipo_peligro = "Enemigo"
 numero_peligros = 2
+
+[node name="ContenedorBasesEnemigas" type="Node" parent="."]
+
+[node name="BaseEnemiga" parent="ContenedorBasesEnemigas" instance=ExtResource( 13 )]
+position = Vector2( 1893.84, -60.6869 )
+
+[node name="BaseEnemiga2" parent="ContenedorBasesEnemigas" instance=ExtResource( 13 )]
+position = Vector2( -49.6836, 1210.08 )
+
+[node name="BaseEnemiga3" parent="ContenedorBasesEnemigas" instance=ExtResource( 13 )]
+position = Vector2( -1037.47, -973.717 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 2 )
@@ -120,5 +132,5 @@ script = ExtResource( 11 )
 [node name="TweenCamara" type="Tween" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1148.54, -76.8954 )
+position = Vector2( -80.4038, 2064.66 )
 [connection signal="tween_completed" from="TweenCamara" to="." method="_on_TweenCamara_tween_completed"]
