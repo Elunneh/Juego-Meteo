@@ -39,6 +39,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Juego/Proyectiles/Canion.gd"
 }, {
+"base": "contenedorInfo",
+"class": "ContenedorInfoEnergia",
+"language": "GDScript",
+"path": "res://Juego/UI/ContenedorInfoEnergia.gd"
+}, {
 "base": "Node",
 "class": "DatoJuego",
 "language": "GDScript",
@@ -166,6 +171,7 @@ _global_script_class_icons={
 "CamaraNivel": "",
 "CamaraPlayer": "",
 "Canion": "",
+"ContenedorInfoEnergia": "",
 "DatoJuego": "",
 "Dummy": "",
 "EnemigoBase": "",

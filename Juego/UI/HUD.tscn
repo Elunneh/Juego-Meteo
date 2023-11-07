@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Juego/iconoMeteo.png" type="Texture" id=1]
 [ext_resource path="res://Juego/UI/HUD.gd" type="Script" id=2]
 [ext_resource path="res://Juego/UI/ContenedorInfo.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Juego/UI/InfoLaser.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Juego/UI/InfoEscudo.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "default"
@@ -42,6 +44,7 @@ script = ExtResource( 2 )
 [node name="FadeCanvas" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="FadeCanvas"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -1.0
@@ -105,8 +108,24 @@ margin_bottom = 116.063
 text = " tiempo restante
 mm:ss"
 
+[node name="InfoLaser" parent="." instance=ExtResource( 4 )]
+margin_left = 1627.96
+margin_top = 951.931
+margin_right = 1911.96
+margin_bottom = 1067.93
+
+[node name="InfoEscudo" parent="." instance=ExtResource( 5 )]
+margin_left = 1626.64
+margin_top = 830.057
+margin_right = 1910.64
+margin_bottom = 946.057
+
 [editable path="InfoZonaRecarga"]
 
 [editable path="InfoMeteoritos"]
 
 [editable path="InfoTiempoResta"]
+
+[editable path="InfoLaser"]
+
+[editable path="InfoEscudo"]

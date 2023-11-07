@@ -11,7 +11,7 @@ var energia_original: float
 ## setters and getters
 func get_esta_activado()-> bool:
 	return esta_activado
-
+	
 
 ##Metodos
 func _ready()-> void:
@@ -32,7 +32,10 @@ func controlar_energia(consumo: float)-> void:
 	if energia > energia_original:
 		energia = energia_original
 	elif energia <= 0.0:
+		Eventos.emit_signal("ocultar_energia_escudo")
 		desactivar()
+		return
+	
 
 
 

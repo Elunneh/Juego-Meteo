@@ -24,7 +24,7 @@ explosion_meteorito = ExtResource( 7 )
 sector_meteoritos = ExtResource( 9 )
 enemigo_interceptor = ExtResource( 10 )
 rele_masa = ExtResource( 14 )
-tiempo_limite = 15
+tiempo_limite = 60
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_ignore_camera_zoom = true
@@ -94,13 +94,13 @@ texture = ExtResource( 8 )
 [node name="TriggersLluviaMeteoritos" type="Node" parent="."]
 
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" instance=ExtResource( 5 )]
-position = Vector2( -333.351, 413.87 )
+position = Vector2( -404.704, -1127.34 )
 tipo_peligro = "Meteorito"
 
 [node name="ContenedorEstaciones" type="Node" parent="."]
 
 [node name="EstacionRecarga" parent="ContenedorEstaciones" instance=ExtResource( 12 )]
-position = Vector2( 5099.27, -438.273 )
+position = Vector2( -1240.65, 438.632 )
 rotation = 2.73641
 
 [node name="TriggersInterseptores" type="Node" parent="."]

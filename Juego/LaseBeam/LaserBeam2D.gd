@@ -34,19 +34,19 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	cast_to = (cast_to + Vector2.RIGHT * cast_speed * delta).clamped(max_length)
 	cast_beam(delta)
-
+	
 func set_is_casting(cast: bool) -> void:
 	is_casting = cast
-
+	
 	if is_casting:
 		laser_sfx.play()
 		cast_to = Vector2.ZERO
 		fill.points[1] = cast_to
 		appear()
 	else:
-		
+		Eventos.emit_signal("ocultar_energia_laser")
 		laser_sfx.stop()
-
+		Eventos.emit_signal("cambio_energia_laser", energia_original, energia)
 		collision_particles.emitting = false
 		disappear()
 
@@ -58,11 +58,12 @@ func set_is_casting(cast: bool) -> void:
 func cast_beam(delta: float) -> void:
 	if is_casting:
 		if energia <= 0.0:
+			
 			print("SIN ENERGIA")
 			set_is_casting(false)
 			return
 		controlar_energia (radio_desgaste * delta)
-		
+		Eventos.emit_signal("cambio_energia_laser", energia_original, energia)
 	
 	var cast_point : Vector2 = cast_to
 	
@@ -86,7 +87,8 @@ func controlar_energia(consumo: float)-> void:
 	energia += consumo
 	if energia >  energia_original:
 		energia = energia_original
-	print("Energia Laser: ",energia )
+		Eventos.emit_signal("cambio_energia_laser", energia_original, energia)
+	
 
 func appear() -> void:
 	if tween.is_active():
