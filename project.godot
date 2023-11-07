@@ -84,6 +84,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Juego/Metetoritos/ExplosionMeteorito.gd"
 }, {
+"base": "CanvasLayer",
+"class": "HUD",
+"language": "GDScript",
+"path": "res://Juego/UI/HUD.gd"
+}, {
 "base": "RigidBody2D",
 "class": "Meteoritos",
 "language": "GDScript",
@@ -148,6 +153,11 @@ _global_script_classes=[ {
 "class": "SectorMeteoritos",
 "language": "GDScript",
 "path": "res://Juego/Metetoritos/SectorMeteoritos.gd"
+}, {
+"base": "NinePatchRect",
+"class": "contenedorInfo",
+"language": "GDScript",
+"path": "res://Juego/UI/ContenedorInfo.gd"
 } ]
 _global_script_class_icons={
 "AreaColision": "",
@@ -165,6 +175,7 @@ _global_script_class_icons={
 "EstacionRecarga": "",
 "Estela": "",
 "ExplosionMeteorito": "",
+"HUD": "",
 "Meteoritos": "",
 "MeteoritosSpawner": "",
 "Motor": "",
@@ -177,7 +188,8 @@ _global_script_class_icons={
 "ReleMasa": "",
 "RutaEnemiga": "",
 "SectorDePeligro": "",
-"SectorMeteoritos": ""
+"SectorMeteoritos": "",
+"contenedorInfo": ""
 }
 
 [application]

@@ -6,7 +6,7 @@
 [ext_resource path="res://Juego/Estaciones/lowFrequency_explosion_B.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Juego/Estaciones/ReleMasa.gd" type="Script" id=5]
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=1]
 resource_name = "Activado"
 length = 2.0
 loop = true
@@ -84,8 +84,7 @@ tracks/5/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "Default"
+[sub_resource type="Animation" id=2]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprites:rotation_degrees")
@@ -148,8 +147,7 @@ tracks/4/keys = {
 "values": [  ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Spawn"
+[sub_resource type="Animation" id=3]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprites:visible")
@@ -188,7 +186,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "Super_Activado "
 length = 2.0
 loop = true
@@ -266,7 +264,7 @@ tracks/5/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=5]
 radius = 833.672
 
 [node name="ReleMasa" type="Node2D"]
@@ -295,10 +293,10 @@ texture = ExtResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Spawn"
-anims/Activado = SubResource( 4 )
-anims/Default = SubResource( 1 )
-anims/Spawn = SubResource( 2 )
-"anims/Super_Activado " = SubResource( 5 )
+anims/Activado = SubResource( 1 )
+anims/Default = SubResource( 2 )
+anims/Spawn = SubResource( 3 )
+"anims/Super_Activado " = SubResource( 4 )
 
 [node name="Tween" type="Tween" parent="."]
 
@@ -310,7 +308,7 @@ bus = "SFX"
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorPlayer"]
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]
 [connection signal="body_entered" from="DetectorPlayer" to="." method="_on_DetectorPlayer_body_entered"]

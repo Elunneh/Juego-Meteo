@@ -153,6 +153,7 @@ tracks/4/keys = {
 
 [node name="SectorMeteoritos" type="Node2D"]
 script = ExtResource( 2 )
+intervalo_spawn = 1.0
 
 [node name="BordesNavePlayer" type="Node2D" parent="."]
 
