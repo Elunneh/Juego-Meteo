@@ -107,6 +107,7 @@ margin_left = 1631.57
 margin_top = 12.7135
 margin_right = 1915.57
 margin_bottom = 128.714
+auto_ocultar = true
 
 [node name="Label" parent="InfoTiempoResta" index="0"]
 margin_left = 13.3264

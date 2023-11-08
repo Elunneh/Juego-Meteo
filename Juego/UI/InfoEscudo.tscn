@@ -41,3 +41,4 @@ text = "energia escudo"
 [node name="ProgressBar" parent="." index="3"]
 custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
+value = 100.0
