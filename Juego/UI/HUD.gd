@@ -26,7 +26,7 @@ func set_auto_ocultar(value: bool) -> void:
 #metodos customs
 func conectar_seniales()-> void:
 	Eventos.connect("nivel_iniciado", self, "fade_out")
-	Eventos.connect("nivel_terminado", self, "fade_int")
+	Eventos.connect("nivel_terminado", self, "fade_in")
 	Eventos.connect("cambio_numero_meteoritos", self, "_on_cambio_numero_meteoritos")
 	Eventos.connect("detecto_zona_recarga", self, "_on_detecto_zona_recarga")
 	Eventos.connect("actualizar_tiempo", self, "_on_actualizar_info_tiempo")
@@ -52,6 +52,8 @@ func _on_detecto_zona_recarga(en_zona : bool)->void:
 func _on_cambio_numero_meteoritos(numero:int)-> void:
 	info_meteoritos.mostrar_suavisado()
 	info_meteoritos.modificar_texto("Meteoritos Restantes\n {cantidad}".format({"cantidad":numero}))
+	
+	
 
 
 func _on_actualizar_info_tiempo(tiempo_restante:int)-> void:
@@ -76,3 +78,9 @@ func _on_actualizar_energia_laser(energia_max:float, energia_actual: float)-> vo
 func _on_actualizar_energia_escudo(energia_max: float, energia_actual: float)-> void:
 	info_escudo.mostrar()
 	info_escudo.actualizar_energia(energia_max, energia_actual)
+	
+	
+func _on_nave_destruida(nave: NaveBase, _posicion, _explosiones)-> void:
+	if nave is Player:
+		get_tree().call_group("contenedor_informacion", "set_esta_activo", false)
+		get_tree().call_group("contenedor_informacion", "ocultar")

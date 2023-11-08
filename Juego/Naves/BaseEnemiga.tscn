@@ -198,7 +198,9 @@ tracks/3/keys = {
 "values": [ 0.0, 360.0 ]
 }
 
-[node name="BaseEnemiga" type="Node2D"]
+[node name="BaseEnemiga" type="Node2D" groups=[
+"minimap",
+]]
 script = ExtResource( 7 )
 orbital = ExtResource( 10 )
 numero_orbitales = 6

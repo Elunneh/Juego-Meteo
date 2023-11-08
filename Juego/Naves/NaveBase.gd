@@ -7,7 +7,7 @@ enum ESTADO {SPAWN, VIVO, INVENCIBLE, MUERTO}
 
 ##Atributos Export
 export var hitpoints: float = 20.0
-
+export var numero_explosiones: float = 20
 ##Atributos
 var estado_actual:int = ESTADO.SPAWN
 

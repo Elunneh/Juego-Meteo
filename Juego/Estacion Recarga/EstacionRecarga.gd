@@ -28,6 +28,7 @@ func _unhandled_input(event: InputEvent)-> void:
 		nave_player.get_laser().controlar_energia(radio_energia_entregada)
 	if event. is_action_released("recarga_laser"):
 		Eventos.emit_signal("ocultar_energia_laser")
+		
 	elif event.is_action_released("recarga_escudo"):
 		Eventos.emit_signal("ocultar_energia_escudo")
 
@@ -39,6 +40,7 @@ func puede_recargar(event: InputEvent) -> bool:
 			carga_sfx.play()
 			
 		return true
+		
 	return false
 
 func controlar_energia()-> void:
@@ -61,6 +63,7 @@ func _on_AreaRecarga_body_entered(body: Node)-> void:
 		nave_player = body
 	body.set_gravity_scale(0.1)
 	Eventos.emit_signal("detecto_zona_recarga", true)
+	
 
 
 func _on_AreaRecarga_body_exited(body: Node)-> void:

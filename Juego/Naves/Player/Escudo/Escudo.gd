@@ -20,18 +20,23 @@ func _ready()-> void:
 	controlar_colisionador(true)
 	
 func _process(delta:float)-> void:
+	
 	controlar_energia (radio_desgaste * delta)
 	
 ##metodos customs
 
 func controlar_energia(consumo: float)-> void:
 	energia += consumo
+	
 	print("Energia Escudo: ", energia)
+	
 	
 	
 	if energia > energia_original:
 		energia = energia_original
+		
 	elif energia <= 0.0:
+		
 		Eventos.emit_signal("ocultar_energia_escudo")
 		desactivar()
 		return
@@ -51,6 +56,7 @@ func activar()->void:
 	esta_activado = true
 	controlar_colisionador(false)
 	$AnimationPlayer.play("Activando")
+	
 	
 func desactivar()-> void:
 	set_process(false)

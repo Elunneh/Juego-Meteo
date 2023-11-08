@@ -74,7 +74,6 @@ tracks/0/keys = {
 }
 
 [node name="ContenedorInfo" type="NinePatchRect"]
-modulate = Color( 1, 1, 1, 0 )
 margin_right = 284.0
 margin_bottom = 116.0
 texture = ExtResource( 1 )

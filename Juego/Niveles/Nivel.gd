@@ -72,8 +72,11 @@ func crear_sector_enemigo(num_enemigos: int)->void:
 func controlar_meteoritos_restantes()->void:
 	meteoritos_totales -= 1
 	Eventos.emit_signal("cambio_numero_meteoritos", meteoritos_totales)
+	
 	if meteoritos_totales == 0:
 		contenedor_sector_meteoritos.get_child(0).queue_free()
+		
+		
 		
 		$Player/CamaraPlayer.set_puede_hacer_zoom(true)
 		var zoom_actual = $Player/CamaraPlayer.zoom
