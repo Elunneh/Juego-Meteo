@@ -104,12 +104,12 @@ numero_peligros = 1
 position = Vector2( 411.131, -90.7692 )
 
 [node name="EstacionRecarga2" parent="ContenedorEstaciones" instance=ExtResource( 12 )]
-position = Vector2( 5900.93, -1684.97 )
+position = Vector2( -4610.06, 1214.61 )
 
 [node name="TriggersInterseptores" type="Node" parent="."]
 
 [node name="SectorDePeligro" parent="TriggersInterseptores" instance=ExtResource( 5 )]
-position = Vector2( 7509.05, -652.825 )
+position = Vector2( -391.617, -510.023 )
 tipo_peligro = "Enemigo"
 numero_peligros = 2
 
@@ -119,7 +119,7 @@ numero_peligros = 2
 position = Vector2( -1713.93, 672.759 )
 
 [node name="BaseEnemiga2" parent="ContenedorBasesEnemigas" instance=ExtResource( 13 )]
-position = Vector2( 6053.29, 2171.07 )
+position = Vector2( 341.671, 3141.16 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 2 )
@@ -132,7 +132,8 @@ script = ExtResource( 11 )
 [node name="TweenCamara" type="Tween" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -935.924, -542.221 )
+position = Vector2( -6.87518, 504.293 )
+hitpoints = 20.0
 
 [node name="RestartTimer" type="Timer" parent="."]
 wait_time = 4.0

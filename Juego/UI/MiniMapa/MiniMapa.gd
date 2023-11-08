@@ -3,26 +3,43 @@ extends MarginContainer
 
 ## Atributos export
 export var escala_zoom: float = 4.0
+export var tiempo_visible: float = 5.0
 
 ## Atributos
 var escalar_grilla: Vector2
 var player: Player = null
+var esta_visible: bool = true setget set_esta_visible
 
 ## Atributos Onready
 onready var zona_renderizado: TextureRect = $cuadrominimapa/contenedoriconos/ZonaRenderMiniMapa
 onready var icono_player: Sprite = $cuadrominimapa/contenedoriconos/ZonaRenderMiniMapa/IconoPlayer
 onready var icono_base: Sprite = $cuadrominimapa/contenedoriconos/ZonaRenderMiniMapa/IconoBaseEnemiga
 onready var icono_estacion: Sprite = $cuadrominimapa/contenedoriconos/ZonaRenderMiniMapa/IconoEstacion
+onready var icono_interceptor: Sprite = $cuadrominimapa/contenedoriconos/ZonaRenderMiniMapa/IconoInterceptor
+onready var icono_rele : Sprite = $cuadrominimapa/contenedoriconos/ZonaRenderMiniMapa/IconoReleMasa
+onready var timer_visibilidad: Timer = $TimerVisibilidad
+onready var tween_visibilidad: Tween = $TweenVisibilidad
 onready var items_mini_mapas: Dictionary = {}
+
+
+##setter y getter
+
+func set_esta_visible(hacer_visible: bool)-> void:
+	if hacer_visible:
+		timer_visibilidad.start()
+	esta_visible = hacer_visible
+	tween_visibilidad.interpolate_property(self, "modulate", Color(1, 1, 1, not hacer_visible ), Color(1,1,1, hacer_visible), 0.5,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	tween_visibilidad.start()
+
 
 ## Métodos
 func _ready() -> void:
 	set_process(false)
-	icono_player.position = zona_renderizado.rect_size * 0.5##ACA SE JODE SI CAMBIO
+	icono_player.position = zona_renderizado.rect_size * 0.5
+	conectar_seniales()
 	
-	escalar_grilla = zona_renderizado.rect_size / (get_viewport_rect().size * escala_zoom)##aca tambien 
-	Eventos.connect("nivel_iniciado", self, "_on_nivel_iniciado")
-	Eventos.connect("nave_destruida", self, "_on_nave_destruida")
+	escalar_grilla = zona_renderizado.rect_size / (get_viewport_rect().size * escala_zoom)
+
 
 func _process(delta: float) -> void:
 	if not player:
@@ -30,6 +47,12 @@ func _process(delta: float) -> void:
 
 	icono_player.rotation_degrees = player.rotation_degrees + 90
 	modificar_posicion_iconos()
+	
+func _unhandled_input(event: InputEvent)-> void:
+	if event.is_action_pressed("minimapa"):
+		set_esta_visible(not esta_visible)
+	
+	
 ## Métodos personalizados
 
 func _on_nivel_iniciado() -> void:
@@ -50,6 +73,12 @@ func obtener_objetos_minimapa() -> void:
 				sprite_icono = icono_base.duplicate()
 			elif objeto is EstacionRecarga:
 				sprite_icono = icono_estacion.duplicate()
+			elif objeto is EnemigoInterceptor:
+				sprite_icono = icono_interceptor.duplicate()
+			elif objeto is ReleMasa:
+				sprite_icono = icono_rele.duplicate()
+				
+				
 			items_mini_mapas[objeto] = sprite_icono
 			items_mini_mapas[objeto].visible = true
 			zona_renderizado.add_child(items_mini_mapas[objeto])
@@ -58,9 +87,30 @@ func modificar_posicion_iconos()-> void:
 	for item in items_mini_mapas:
 		var item_icono: Sprite = items_mini_mapas[item]
 		var offset_pos: Vector2 = item.position - player.position
-		var pos_icono: Vector2 = offset_pos * escalar_grilla  + (zona_renderizado.rect_size * 0.5) 
+		#var pos_icono: Vector2 = offset_pos * escalar_grilla  + (zona_renderizado.rect_size * 0.5) 
 		
+		var pos_icono: Vector2 = offset_pos * escalar_grilla + icono_player.position
 		pos_icono.x = clamp (pos_icono.x, 0,zona_renderizado.rect_size.x )
 		pos_icono.y = clamp(pos_icono.y, 0, zona_renderizado.rect_size.y)
 		item_icono.position = pos_icono
-		
+		if zona_renderizado.get_rect().has_point(pos_icono - zona_renderizado.rect_position):
+			item_icono.scale = Vector2(0.5, 0.5)
+		else:
+			 item_icono.scale = Vector2(0.3,0.3)
+			
+
+func conectar_seniales()-> void:
+	Eventos.connect("nivel_iniciado", self, "_on_nivel_iniciado")
+	Eventos.connect("nave_destruida", self, "_on_nave_destruida")
+	Eventos.connect("minimapa_objeto_creado", self, "obtener_objetos_minimapa")
+	Eventos.connect("minimapa_objeto_destruido", self, "quitar_icono")
+	
+func quitar_icono(objeto: Node2D)-> void:
+	if objeto in items_mini_mapas:
+		items_mini_mapas[objeto] . queue_free()
+		items_mini_mapas. erase(objeto)
+
+
+func _on_TimerVisibilidad_timeout()-> void:
+	if esta_visible:
+		set_esta_visible(false)

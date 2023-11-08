@@ -49,6 +49,7 @@ func destruir()-> void:
 	var posicion_partes = [$Sprites/SpriteA.global_position, $Sprites/SpriteB.global_position, $Sprites/SpriteC.global_position, $Sprites/SpriteD.global_position]
 
 	Eventos.emit_signal("base_destruida",self, posicion_partes)
+	Eventos.emit_signal("minimapa_objeto_destruido", self)
 	queue_free()
 
 func seleccionar_ruta()->void:

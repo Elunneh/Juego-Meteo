@@ -4,21 +4,33 @@
 [ext_resource path="res://Juego/UI/ContenedorInfo.tscn" type="PackedScene" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.115738, 0.722656, 0.189232, 1 )
+bg_color = Color( 0, 3.48, 5.78, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.698242, 0.122738, 0.122738, 1 )
+bg_color = Color( 0.721569, 0.00784314, 0.00784314, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [node name="InfoLaser" instance=ExtResource( 2 )]
-modulate = Color( 1, 1, 1, 1 )
+modulate = Color( 0.670588, 0.937255, 0.964706, 1 )
 margin_left = 1630.34
 margin_top = 10.0793
 margin_right = 1914.34

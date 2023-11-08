@@ -1,6 +1,12 @@
 class_name ReleMasa
 extends Node2D
 
+
+
+##Metodos
+func _ready()-> void:
+	Eventos.emit_signal("minimapa_objeto_creado")
+
 ##metodo custom
 func atraer_player(body:Node)->void:
 	$Tween.interpolate_property(body, "global_position", body.global_position, global_position, 1.0, Tween.TRANS_CIRC, Tween.EASE_IN)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Juego/Naves/NaveBase.gd" type="Script" id=1]
 [ext_resource path="res://Juego/Proyectiles/Canion.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Juego/Proyectiles/ProyectilPlayer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Juego/UI/BarraSalud.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Juego/Naves/Player/Sonidos/impacto.ogg" type="AudioStream" id=6]
 
 [node name="NaveBase" type="RigidBody2D"]
@@ -26,4 +27,6 @@ danio_proyectil = 8
 stream = ExtResource( 6 )
 volume_db = -12.077
 bus = "SFX"
+
+[node name="BarraSalud" parent="." instance=ExtResource( 4 )]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -4,14 +4,26 @@
 [ext_resource path="res://Juego/UI/ContenedorInfoEnergia.gd" type="Script" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.115738, 0.722656, 0.189232, 1 )
+bg_color = Color( 0.968994, 1, 0.0078125, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.698242, 0.122738, 0.122738, 1 )
+bg_color = Color( 0.721569, 0.00784314, 0.00784314, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -43,7 +55,6 @@ margin_right = 127.0
 margin_bottom = -13.1189
 custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
-max_value = 100.0
 value = 50.0
 rounded = true
 percent_visible = false
