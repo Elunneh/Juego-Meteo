@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Juego/Naves/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://default_env.tres" type="Environment" id=2]
@@ -15,9 +15,13 @@
 [ext_resource path="res://Juego/Naves/BaseEnemiga.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Juego/Estaciones/ReleMasa.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Juego/UI/HUD.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Juego/Musica/combat-plant.wav" type="AudioStream" id=17]
+[ext_resource path="res://Juego/Musica/galactic-chase.wav" type="AudioStream" id=18]
 
 [node name="NivelTest" type="Node2D"]
 script = ExtResource( 3 )
+musica_nivel = ExtResource( 18 )
+musica_combate = ExtResource( 17 )
 explosion = ExtResource( 4 )
 meteorito = ExtResource( 6 )
 explosion_meteorito = ExtResource( 7 )

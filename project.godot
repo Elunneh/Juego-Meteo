@@ -220,6 +220,7 @@ config/icon="res://Juego/iconoMeteo.png"
 
 Eventos="*res://Juego/Autoload/Eventos.gd"
 DatosJuego="*res://Juego/Autoload/DatosJuego.gd"
+MusicaJuego="*res://Juego/Autoload/MusicaJuego.tscn"
 
 [display]
 

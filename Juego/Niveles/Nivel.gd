@@ -7,6 +7,8 @@ var player:Player = null
 var numero_bases_enemigas = 0
 
 ## Atributos Export
+export var musica_nivel: AudioStream = null
+export var musica_combate: AudioStream = null
 export var explosion:PackedScene = null
 export var meteorito:PackedScene = null
 export var explosion_meteorito: PackedScene = null
@@ -15,6 +17,7 @@ export var enemigo_interceptor: PackedScene = null
 export var rele_masa: PackedScene = null
 export var tiempo_transicion_camara: float = 2.0
 export var tiempo_limite: int = 10
+
 #Atributos Onready
 onready var contenedor_proyectiles:Node
 onready var contenedor_meteoritos:Node
@@ -26,6 +29,9 @@ onready var actualizador_timer: Timer = $ActualizadoTimer
 
 func _ready()-> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN )
+	MusicaJuego.set_streams(musica_nivel, musica_combate)
+	MusicaJuego.musica_nivel.play()
+	
 	conectar_seniales()
 	crear_contenedores()
 	numero_bases_enemigas = contabilizar_bases_enemigas()
