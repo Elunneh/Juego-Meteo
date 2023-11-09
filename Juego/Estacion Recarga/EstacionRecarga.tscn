@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Juego/Estacion Recarga/spaceStation.png" type="Texture" id=1]
 [ext_resource path="res://Juego/Estacion Recarga/AreaAtraccion.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Juego/Estacion Recarga/AlertaVacio.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Juego/Estacion Recarga/recargando.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Juego/Estacion Recarga/EstacionRecarga.gd" type="Script" id=5]
+[ext_resource path="res://Juego/UI/BarraSalud.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Juego/Fuente/Barra.ttf" type="DynamicFontData" id=7]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 87.0
@@ -173,6 +175,24 @@ tracks/6/keys = {
 "values": [ 0.0, 360.0 ]
 }
 
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.0862745, 0.788235, 0.854902, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.172549, 0.164706, 0.164706, 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 20
+outline_size = 4
+outline_color = Color( 0.0117647, 0.0117647, 0.0117647, 1 )
+font_data = ExtResource( 7 )
+
 [node name="EstacionRecarga" type="Node2D" groups=[
 "minimap",
 ]]
@@ -205,6 +225,20 @@ bus = "SFX"
 stream = ExtResource( 3 )
 volume_db = -25.082
 bus = "SFX"
+
+[node name="BarraEnergia" parent="." instance=ExtResource( 6 )]
+margin_left = -107.0
+margin_top = -201.0
+margin_right = 107.0
+margin_bottom = -174.0
+rect_rotation = 0.0
+custom_styles/fg = SubResource( 4 )
+custom_styles/bg = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+rounded = false
+siempre_visible = true
 [connection signal="body_entered" from="AreaColision" to="." method="_on_AreaColision_body_entered"]
 [connection signal="body_entered" from="AreaRecarga" to="." method="_on_AreaRecarga_body_entered"]
 [connection signal="body_exited" from="AreaRecarga" to="." method="_on_AreaRecarga_body_exited"]

@@ -94,29 +94,28 @@ texture = ExtResource( 8 )
 [node name="TriggersLluviaMeteoritos" type="Node" parent="."]
 
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" instance=ExtResource( 5 )]
-position = Vector2( 7402.54, -1816.24 )
+position = Vector2( 3967.93, -591.335 )
 tipo_peligro = "Meteorito"
-numero_peligros = 1
 
 [node name="ContenedorEstaciones" type="Node" parent="."]
 
 [node name="EstacionRecarga" parent="ContenedorEstaciones" instance=ExtResource( 12 )]
-position = Vector2( 411.131, -90.7692 )
+position = Vector2( 1776.05, -1469.15 )
 
 [node name="EstacionRecarga2" parent="ContenedorEstaciones" instance=ExtResource( 12 )]
-position = Vector2( -4610.06, 1214.61 )
+position = Vector2( -4172.43, 529.627 )
 
 [node name="TriggersInterseptores" type="Node" parent="."]
 
 [node name="SectorDePeligro" parent="TriggersInterseptores" instance=ExtResource( 5 )]
-position = Vector2( -391.617, -510.023 )
+position = Vector2( 197.649, -914.398 )
 tipo_peligro = "Enemigo"
 numero_peligros = 2
 
 [node name="ContenedorBasesEnemigas" type="Node" parent="."]
 
 [node name="BaseEnemiga" parent="ContenedorBasesEnemigas" instance=ExtResource( 13 )]
-position = Vector2( -1713.93, 672.759 )
+position = Vector2( -2150.58, -2769.21 )
 
 [node name="BaseEnemiga2" parent="ContenedorBasesEnemigas" instance=ExtResource( 13 )]
 position = Vector2( 341.671, 3141.16 )
@@ -132,7 +131,7 @@ script = ExtResource( 11 )
 [node name="TweenCamara" type="Tween" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -6.87518, 504.293 )
+position = Vector2( -2986, -2921.17 )
 hitpoints = 20.0
 
 [node name="RestartTimer" type="Timer" parent="."]

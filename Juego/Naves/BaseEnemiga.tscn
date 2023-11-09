@@ -300,7 +300,8 @@ margin_right = 115.0
 margin_bottom = -323.0
 rect_rotation = 0.0
 custom_styles/fg = SubResource( 8 )
-value = 80.0
+percent_visible = false
+siempre_visible = true
 [connection signal="body_entered" from="AreaColision" to="." method="_on_AreaColision_body_entered"]
 [connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
 [connection signal="timeout" from="TimerSpawnerEnemigo" to="." method="_on_TimerSpawnerEnemigo_timeout"]
