@@ -15,6 +15,13 @@ onready var musica_nivel: AudioStreamPlayer = $MusicaNivel
 onready var musica_combate: AudioStreamPlayer = $MusicaCombate
 onready var tween_on : Tween = $TweenMusicaOn
 onready var tween_off : Tween = $TweenMusicaOff
+onready var lista_musicas: Dictionary={"menu_principal": $MusicaMenuPrincipal} setget, get_lista_musicas
+
+##setter y getter
+func get_lista_musicas()-> Dictionary:
+	return lista_musicas
+
+
 
 ##Metodos custom
 
@@ -22,10 +29,15 @@ func set_streams(stream_musica:AudioStream, stream_combate:AudioStream)-> void:
 	musica_nivel.stream = stream_musica
 	musica_combate.stream = stream_combate
 	
-func play_music_nivel()->void:
+func play_musica(musica: AudioStreamPlayer)-> void:
 	stop_todo()
-	musica_nivel.play()
+	musica.play()
 	
+
+
+func play_boton()-> void:
+	$BotonMenu.play()
+
 func stop_todo()-> void:
 	for nodo in get_children():
 		if nodo is AudioStreamPlayer:
@@ -43,20 +55,20 @@ func fade_in(musica_fade_in:AudioStreamPlayer)-> void:
 	var volumen_original = musica_fade_in. volume_db
 	musica_fade_in.volume_db = volumen_apagado
 	musica_fade_in.play()
-	tween_on.interpolate_property(musica_fade_in, "volumen_db",volumen_apagado, volumen_original, tiempo_transicion, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	tween_on.interpolate_property(musica_fade_in, "volume_db",volumen_apagado, volumen_original, tiempo_transicion, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween_on.start()
 	
 func fade_out(musica_fade_out: AudioStreamPlayer)-> void:
 	vol_original_musica_off = musica_fade_out.volume_db
-	tween_off.interpolate_property(musica_fade_out, "volumen_db",musica_fade_out.volume_db, volumen_apagado,tiempo_transicion,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-	tween_off.start
+	tween_off.interpolate_property(musica_fade_out, "volume_db",musica_fade_out.volume_db, volumen_apagado,tiempo_transicion,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	tween_off.start()
 	
-	
+func play_music_nivel()->void:
+	stop_todo()
+	musica_nivel.play()
 
 ##señales internas
 
-func _on_TweenMusicaOff_tween_all_completed(object: Object,_key: NodePath)-> void:
+func _on_TweenMusicaOff_tween_completed(object: Object, key: NodePath):
 	object.stop()
-	object.volumen_db = vol_original_musica_off
-	
-	
+	object.volume_db = vol_original_musica_off

@@ -100,6 +100,7 @@ texture = ExtResource( 8 )
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" instance=ExtResource( 5 )]
 position = Vector2( 3967.93, -591.335 )
 tipo_peligro = "Meteorito"
+numero_peligros = 1
 
 [node name="ContenedorEstaciones" type="Node" parent="."]
 
@@ -135,7 +136,7 @@ script = ExtResource( 11 )
 [node name="TweenCamara" type="Tween" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -2986, -2921.17 )
+position = Vector2( 3297.18, -620.477 )
 hitpoints = 20.0
 
 [node name="RestartTimer" type="Timer" parent="."]
