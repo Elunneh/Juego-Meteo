@@ -94,6 +94,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Juego/Metetoritos/ExplosionMeteorito.gd"
 }, {
+"base": "ParallaxBackground",
+"class": "FondoEstrellas",
+"language": "GDScript",
+"path": "res://Juego/Niveles/Fondos/StarFieldBackground.gd"
+}, {
 "base": "CanvasLayer",
 "class": "HUD",
 "language": "GDScript",
@@ -197,6 +202,7 @@ _global_script_class_icons={
 "EstacionRecarga": "",
 "Estela": "",
 "ExplosionMeteorito": "",
+"FondoEstrellas": "",
 "HUD": "",
 "MenuPrincipal": "",
 "Meteoritos": "",
