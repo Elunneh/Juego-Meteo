@@ -1,24 +1,21 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Juego/Naves/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://default_env.tres" type="Environment" id=2]
 [ext_resource path="res://Juego/Niveles/Nivel.gd" type="Script" id=3]
 [ext_resource path="res://Juego/Explosiones/Explosion.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Juego/Peligros/SectorDePeligro.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Juego/Metetoritos/Meteoritos.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Juego/Metetoritos/ExplosionMeteorito.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Juego/Niveles/Fondos/StarFieldBackground.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Juego/Metetoritos/SectorMeteoritos.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Juego/Naves/Enemigos/EnemigoInterceptor.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Juego/Niveles/CamaraNivel.gd" type="Script" id=11]
-[ext_resource path="res://Juego/Estacion Recarga/EstacionRecarga.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Juego/Naves/BaseEnemiga.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Juego/Estaciones/ReleMasa.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Juego/UI/HUD.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Juego/Musica/combat-plant.wav" type="AudioStream" id=17]
 [ext_resource path="res://Juego/Musica/galactic-chase.wav" type="AudioStream" id=18]
 
-[node name="NivelTest" type="Node2D"]
+[node name="NivelBase" type="Node2D"]
 script = ExtResource( 3 )
 musica_nivel = ExtResource( 18 )
 musica_combate = ExtResource( 17 )
@@ -34,33 +31,11 @@ tiempo_limite = 60
 
 [node name="TriggersLluviaMeteoritos" type="Node" parent="."]
 
-[node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" instance=ExtResource( 5 )]
-position = Vector2( 3967.93, -591.335 )
-tipo_peligro = "Meteorito"
-numero_peligros = 10
-
 [node name="ContenedorEstaciones" type="Node" parent="."]
-
-[node name="EstacionRecarga" parent="ContenedorEstaciones" instance=ExtResource( 12 )]
-position = Vector2( 1776.05, -1469.15 )
-
-[node name="EstacionRecarga2" parent="ContenedorEstaciones" instance=ExtResource( 12 )]
-position = Vector2( -4172.43, 529.627 )
 
 [node name="TriggersInterseptores" type="Node" parent="."]
 
-[node name="SectorDePeligro" parent="TriggersInterseptores" instance=ExtResource( 5 )]
-position = Vector2( 197.649, -914.398 )
-tipo_peligro = "Enemigo"
-numero_peligros = 2
-
 [node name="ContenedorBasesEnemigas" type="Node" parent="."]
-
-[node name="BaseEnemiga" parent="ContenedorBasesEnemigas" instance=ExtResource( 13 )]
-position = Vector2( -2150.58, -2769.21 )
-
-[node name="BaseEnemiga2" parent="ContenedorBasesEnemigas" instance=ExtResource( 13 )]
-position = Vector2( 341.671, 3141.16 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 2 )
@@ -73,7 +48,7 @@ script = ExtResource( 11 )
 [node name="TweenCamara" type="Tween" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 3297.18, -620.477 )
+position = Vector2( 1186.95, 744.437 )
 hitpoints = 20.0
 
 [node name="RestartTimer" type="Timer" parent="."]

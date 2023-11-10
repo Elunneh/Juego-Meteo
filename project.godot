@@ -225,7 +225,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Meteoritos_GAME"
-run/main_scene="res://Juego/Niveles/NivelTest.tscn"
+run/main_scene="res://Juego/Menu Principal/MenuPrincipal.tscn"
 config/icon="res://Juego/iconoMeteo.png"
 
 [autoload]
