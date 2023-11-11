@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Juego/Menu Principal/MenuPrincipal.gd" type="Script" id=1]
 [ext_resource path="res://Juego/Fuente/Barra.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Juego/Niveles/Fondos/StarFieldBackground.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Juego/Naves/Player/player_orange.png" type="Texture" id=4]
+[ext_resource path="res://Juego/Fuente/Info.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.356863, 0.815686, 0.827451, 1 )
@@ -140,6 +141,16 @@ tracks/9/keys = {
 "values": [ Vector2( 733.651, 696.61 ), Vector2( 735.77, 438.101 ), Vector2( 1258.09, 433.863 ), Vector2( 1228.95, 756.646 ), Vector2( 769.672, 791.962 ), Vector2( 733.651, 696.61 ) ]
 }
 
+[sub_resource type="DynamicFont" id=5]
+size = 30
+outline_color = Color( 0.0793495, 0.874016, 0.92334, 1 )
+use_filter = true
+extra_spacing_top = 2
+extra_spacing_bottom = 1
+extra_spacing_char = 2
+extra_spacing_space = 1
+font_data = ExtResource( 5 )
+
 [node name="MenuPrincipal" type="Node"]
 script = ExtResource( 1 )
 nivel_inicial = "res://Juego/Niveles/Nivel1.tscn"
@@ -211,5 +222,31 @@ texture = ExtResource( 4 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "anim_menu"
 anims/anim_menu = SubResource( 4 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -941.212
+margin_top = -450.83
+margin_right = -27.2123
+margin_bottom = -2.83032
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_outline_modulate = Color( 0.214691, 0.820313, 0.750299, 1 )
+text = "W= Arriba
+D= Derecha
+A= Izquierda
+S= Abajo
+Click D: Laser
+Click IZ: Proyectiles
+Scroll boton : Escudo
+Scroll : Zoom
+E = Recarga laser en zona de recargas
+R = Recarga Escudo en zona de recargas
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="ButtonJugar" to="." method="_on_ButtonJugar_pressed"]
 [connection signal="pressed" from="ButtonSalir" to="." method="_on_ButtonSalir_pressed"]

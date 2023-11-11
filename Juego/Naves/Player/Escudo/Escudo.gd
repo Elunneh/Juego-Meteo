@@ -39,9 +39,6 @@ func controlar_energia(consumo: float)-> void:
 
 func controlar_colisionador(esta_desactivado : bool)-> void:
 	$CollisionShape2D.set_deferred("disabled", esta_desactivado)
-
-
-	
 	
 func activar()->void:
 	if energia <= 0.0:
