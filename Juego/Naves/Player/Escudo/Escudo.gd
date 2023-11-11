@@ -27,11 +27,6 @@ func _process(delta:float)-> void:
 
 func controlar_energia(consumo: float)-> void:
 	energia += consumo
-	
-	print("Energia Escudo: ", energia)
-	
-	
-	
 	if energia > energia_original:
 		energia = energia_original
 		
@@ -41,8 +36,6 @@ func controlar_energia(consumo: float)-> void:
 		desactivar()
 		return
 	Eventos.emit_signal("cambio_energia_escudo", energia_original, energia)
-
-
 
 func controlar_colisionador(esta_desactivado : bool)-> void:
 	$CollisionShape2D.set_deferred("disabled", esta_desactivado)
@@ -67,9 +60,6 @@ func desactivar()-> void:
 	
 
 ##señales interna
-
-
-
 
 func _on_AnimationPlayer_animation_finished(anim_name: String)-> void:
 	if anim_name == "Activando" and esta_activado:

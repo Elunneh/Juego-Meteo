@@ -30,6 +30,7 @@ func _ready() -> void:
 	energia_original = energia
 	set_physics_process(false)
 	fill.points[1] = Vector2.ZERO
+	Eventos.emit_signal("ocultar_energia_laser")
 
 func _physics_process(delta: float) -> void:
 	cast_to = (cast_to + Vector2.RIGHT * cast_speed * delta).clamped(max_length)
@@ -59,7 +60,7 @@ func cast_beam(delta: float) -> void:
 	if is_casting:
 		if energia <= 0.0:
 			
-			print("SIN ENERGIA")
+			
 			set_is_casting(false)
 			return
 		controlar_energia (radio_desgaste * delta)

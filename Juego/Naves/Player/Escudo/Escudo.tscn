@@ -9,7 +9,7 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 76.7046
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=2]
 resource_name = "Activado"
 loop = true
 step = 0.2
@@ -50,7 +50,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=3]
 resource_name = "Activando"
 length = 0.5
 tracks/0/type = "value"
@@ -230,8 +230,8 @@ rotation = 1.5708
 texture = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Activado = SubResource( 5 )
-anims/Activando = SubResource( 6 )
+anims/Activado = SubResource( 2 )
+anims/Activando = SubResource( 3 )
 anims/defaul = SubResource( 4 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

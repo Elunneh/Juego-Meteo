@@ -5,17 +5,17 @@
 [ext_resource path="res://Juego/Niveles/Fondos/StarFieldBackground.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Juego/Naves/Player/player_orange.png" type="Texture" id=4]
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.356863, 0.815686, 0.827451, 1 )
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.121569, 0.0784314, 0.0784314, 1 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=3]
 outline_color = Color( 0.00392157, 0.00392157, 0.00392157, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "anim_menu"
 length = 7.0
 loop = true
@@ -157,9 +157,9 @@ margin_top = -12.0
 margin_right = 32.5
 margin_bottom = 12.0
 rect_scale = Vector2( 3, 3 )
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 3 )
-custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Jugar"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -175,9 +175,9 @@ margin_top = 79.0001
 margin_right = 32.5001
 margin_bottom = 103.0
 rect_scale = Vector2( 3, 3 )
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 3 )
-custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Salir"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -210,6 +210,6 @@ texture = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "anim_menu"
-anims/anim_menu = SubResource( 5 )
+anims/anim_menu = SubResource( 4 )
 [connection signal="pressed" from="ButtonJugar" to="." method="_on_ButtonJugar_pressed"]
 [connection signal="pressed" from="ButtonSalir" to="." method="_on_ButtonSalir_pressed"]

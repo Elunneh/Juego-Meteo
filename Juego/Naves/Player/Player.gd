@@ -26,6 +26,7 @@ func get_laser() -> RayoLaser:
 	return laser
 	
 func get_escudo() -> Escudo:
+	
 	return escudo
 	
 ##Metodos

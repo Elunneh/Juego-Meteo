@@ -29,7 +29,6 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [node name="InfoEscudo" instance=ExtResource( 1 )]
-modulate = Color( 1, 0.976471, 0.34902, 1 )
 margin_left = 1636.15
 margin_top = 149.831
 margin_right = 1920.15
@@ -37,6 +36,9 @@ margin_bottom = 265.831
 
 [node name="Label" parent="." index="0"]
 text = "energia escudo"
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "ocultar"
 
 [node name="ProgressBar" parent="." index="3"]
 custom_styles/fg = SubResource( 1 )

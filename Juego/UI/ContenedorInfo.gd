@@ -1,16 +1,12 @@
 class_name contenedorInfo
 extends NinePatchRect
 
-
 ##Atributos
 var esta_activo : bool = true setget set_esta_activo
-
 
 ##Atributos Export
 
 export var auto_ocultar: bool = false setget set_auto_ocultar
-
-
 
 ##Atributos Onready
 

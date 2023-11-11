@@ -30,7 +30,7 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [node name="InfoLaser" instance=ExtResource( 2 )]
-modulate = Color( 0.670588, 0.937255, 0.964706, 1 )
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 1630.34
 margin_top = 10.0793
 margin_right = 1914.34
@@ -45,9 +45,6 @@ margin_top = 16.3459
 margin_right = 130.06
 margin_bottom = 61.3459
 text = "energia laser"
-
-[node name="AnimationPlayer" parent="." index="1"]
-autoplay = "mostrar"
 
 [node name="ProgressBar" type="ProgressBar" parent="." index="3"]
 anchor_left = 0.5

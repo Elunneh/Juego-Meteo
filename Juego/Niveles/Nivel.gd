@@ -34,7 +34,6 @@ func _ready()-> void:
 	MusicaJuego.set_streams(musica_nivel, musica_combate)
 	MusicaJuego.musica_nivel.play()
 	
-	
 	conectar_seniales()
 	crear_contenedores()
 	numero_bases_enemigas = contabilizar_bases_enemigas()
@@ -94,7 +93,6 @@ func controlar_meteoritos_restantes()->void:
 func contabilizar_bases_enemigas()-> int:
 	return $ContenedorBasesEnemigas.get_child_count()
 
-
 func crear_rele()-> void:
 	var new_rele_masa: ReleMasa = rele_masa.instance()
 	var pos_aleatoria: Vector2 = crear_posiciones_aleatoria(400.0, 200.0 )
@@ -114,7 +112,7 @@ func crear_sector_meteoritos(centro_camara:Vector2, numero_peligros: int)->void:
 	MusicaJuego.transicion_musicas()
 	meteoritos_totales = numero_peligros
 	var new_sector_meteoritos: SectorMeteoritos = sector_meteoritos.instance()
-	new_sector_meteoritos.crear (centro_camara, numero_peligros)
+	new_sector_meteoritos.crear(centro_camara,numero_peligros)
 	camara_nivel.global_position = centro_camara
 	
 	contenedor_sector_meteoritos.add_child(new_sector_meteoritos)

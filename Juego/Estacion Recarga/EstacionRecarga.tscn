@@ -197,6 +197,7 @@ font_data = ExtResource( 7 )
 "minimap",
 ]]
 script = ExtResource( 5 )
+energia = 10.0
 
 [node name="AreaColision" type="Area2D" parent="."]
 collision_layer = 0
