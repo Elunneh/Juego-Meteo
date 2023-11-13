@@ -1,39 +1,23 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Juego/Menu Principal/MenuPrincipal.gd" type="Script" id=1]
 [ext_resource path="res://Juego/Fuente/Barra.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Juego/Niveles/Fondos/StarFieldBackground.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Juego/Naves/Player/player_orange.png" type="Texture" id=4]
 [ext_resource path="res://Juego/Fuente/Info.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://Juego/Estaciones/ReleMasa.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Juego/Naves/BaseEnemiga.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Juego/Metetoritos/meteorBrown4.png" type="Texture" id=8]
-[ext_resource path="res://Juego/Estacion Recarga/EstacionRecarga.tscn" type="PackedScene" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.356863, 0.815686, 0.827451, 1 )
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color( 0.121569, 0.054902, 0.454902, 1 )
-border_blend = true
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.121569, 0.0784314, 0.0784314, 1 )
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
-border_color = Color( 0.193737, 0.682781, 0.918457, 1 )
-border_blend = true
 
 [sub_resource type="DynamicFont" id=3]
-size = 100
 outline_color = Color( 0.00392157, 0.00392157, 0.00392157, 1 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="Animation" id=4]
+resource_name = "anim_menu"
 length = 7.0
 loop = true
 tracks/0/type = "value"
@@ -106,7 +90,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0, 0.001, 3.1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -71.9194, 86.4684 ), Vector2( 77.9113, 80.4752 ), Vector2( 2116.57, 76.8247 ) ]
+"values": [ Vector2( 77.9113, 80.4752 ), Vector2( 77.9113, 80.4752 ), Vector2( 1831.89, 85.8146 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("Sprite2:position")
@@ -118,7 +102,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0, 3.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1833.33, -95.416 ), Vector2( 1776.62, 1184.51 ) ]
+"values": [ Vector2( 1827.34, 60.4079 ), Vector2( 1776.62, 962.76 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("Sprite3:position")
@@ -130,7 +114,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0, 3.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 2036.58, 1012.9 ), Vector2( -171.033, 985.548 ) ]
+"values": [ Vector2( 1805.84, 997.916 ), Vector2( 134.622, 976.558 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Sprite4:position")
@@ -142,7 +126,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0, 3.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 88.6064, 1169.63 ), Vector2( 103.316, -116.94 ) ]
+"values": [ Vector2( 79.6166, 1004.82 ), Vector2( 106.313, 107.806 ) ]
 }
 tracks/9/type = "value"
 tracks/9/path = NodePath("Sprite5:position")
@@ -154,55 +138,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0, 2, 4, 5, 6, 7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 589.814, 819.471 ), Vector2( 621.899, 237.328 ), Vector2( 1336, 266.053 ), Vector2( 1339.82, 843.548 ), Vector2( 583.882, 860.884 ), Vector2( 589.814, 819.471 ) ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("Sprite6:position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0, 7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -76, -52 ), Vector2( 1977.48, 1118.78 ) ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("Sprite7:position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PoolRealArray( 0, 7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -6.73474, 1021.35 ), Vector2( 140.098, 1165.51 ) ]
-}
-tracks/12/type = "value"
-tracks/12/path = NodePath("Sprite8:position")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
-"times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1173.41, -60.009 ), Vector2( -75.9999, 783.61 ) ]
-}
-tracks/13/type = "value"
-tracks/13/path = NodePath("Sprite9:position")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/keys = {
-"times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1141.37, 1133.34 ), Vector2( -97.3574, 412.524 ) ]
+"values": [ Vector2( 733.651, 696.61 ), Vector2( 735.77, 438.101 ), Vector2( 1258.09, 433.863 ), Vector2( 1228.95, 756.646 ), Vector2( 769.672, 791.962 ), Vector2( 733.651, 696.61 ) ]
 }
 
 [sub_resource type="DynamicFont" id=5]
@@ -220,26 +156,18 @@ script = ExtResource( 1 )
 nivel_inicial = "res://Juego/Niveles/Nivel1.tscn"
 
 [node name="StarFieldBackground" parent="." instance=ExtResource( 3 )]
-color_fondo = Color( 0.00784314, 0.00784314, 0.00784314, 1 )
+color_fondo = Color( 0.247059, 0.0745098, 0.152941, 1 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="ButtonJugar" type="Button" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -285.5
-margin_top = -197.5
-margin_right = 285.5
-margin_bottom = 197.5
-custom_constants/separation = 10
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ButtonJugar" type="Button" parent="VBoxContainer"]
-margin_right = 571.0
-margin_bottom = 192.0
-size_flags_vertical = 3
+margin_left = -32.5
+margin_top = -12.0
+margin_right = 32.5
+margin_bottom = 12.0
+rect_scale = Vector2( 3, 3 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_fonts/font = SubResource( 3 )
@@ -248,11 +176,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ButtonSalir" type="Button" parent="VBoxContainer"]
-margin_top = 202.0
-margin_right = 571.0
-margin_bottom = 395.0
-size_flags_vertical = 3
+[node name="ButtonSalir" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -32.4999
+margin_top = 79.0001
+margin_right = 32.5001
+margin_bottom = 103.0
+rect_scale = Vector2( 3, 3 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_fonts/font = SubResource( 3 )
@@ -261,45 +194,29 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite6" type="Sprite" parent="."]
-position = Vector2( -76, -52 )
-texture = ExtResource( 8 )
-
-[node name="Sprite7" type="Sprite" parent="."]
-position = Vector2( -6.73474, 1021.35 )
-texture = ExtResource( 8 )
-
-[node name="Sprite8" type="Sprite" parent="."]
-position = Vector2( 1173.41, -60.009 )
-texture = ExtResource( 8 )
-
-[node name="Sprite9" type="Sprite" parent="."]
-position = Vector2( 1141.37, 1133.34 )
-texture = ExtResource( 8 )
-
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -71.9194, 86.4684 )
+position = Vector2( 77.9113, 80.4752 )
 rotation = 1.5708
 texture = ExtResource( 4 )
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 1833.33, -95.416 )
+position = Vector2( 1827.34, 60.4079 )
 rotation = 3.14159
 texture = ExtResource( 4 )
 
 [node name="Sprite3" type="Sprite" parent="."]
-position = Vector2( 2036.58, 1012.9 )
+position = Vector2( 1805.84, 997.916 )
 rotation = -1.5708
 texture = ExtResource( 4 )
 
 [node name="Sprite4" type="Sprite" parent="."]
-position = Vector2( 88.6064, 1169.63 )
+position = Vector2( 79.6166, 1004.82 )
 rotation = -0.0334456
 scale = Vector2( 1.07627, 1 )
 texture = ExtResource( 4 )
 
 [node name="Sprite5" type="Sprite" parent="."]
-position = Vector2( 589.814, 819.471 )
+position = Vector2( 733.651, 696.61 )
 texture = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -311,10 +228,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -951.891
-margin_top = -554.948
-margin_right = -37.8907
-margin_bottom = -24.9475
+margin_left = -941.212
+margin_top = -450.83
+margin_right = -27.2123
+margin_bottom = -2.83032
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_outline_modulate = Color( 0.214691, 0.820313, 0.750299, 1 )
 text = "W= Arriba
@@ -325,40 +242,11 @@ Click D: Laser
 Click IZ: Proyectiles
 Scroll boton : Escudo
 Scroll : Zoom
-Space: Pausa
-Tab: Mini Mapa
 E = Recarga laser en zona de recargas
 R = Recarga Escudo en zona de recargas
 "
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="BaseEnemiga" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1718.33, 917.946 )
-scale = Vector2( 0.3, 0.3 )
-
-[node name="BarraSalud" parent="BaseEnemiga" index="9"]
-visible = false
-
-[node name="ReleMasa" parent="." instance=ExtResource( 6 )]
-position = Vector2( 838.494, 155.542 )
-scale = Vector2( 0.2, 0.2 )
-
-[node name="ActivadoSFX" parent="ReleMasa" index="3"]
-volume_db = -69.741
-
-[node name="EstacionRecarga" parent="." instance=ExtResource( 9 )]
-position = Vector2( 320.362, 421.809 )
-scale = Vector2( 0.3, 0.3 )
-
-[node name="BarraEnergia" parent="EstacionRecarga" index="5"]
-visible = false
-[connection signal="pressed" from="VBoxContainer/ButtonJugar" to="." method="_on_ButtonJugar_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonSalir" to="." method="_on_ButtonSalir_pressed"]
-
-[editable path="BaseEnemiga"]
-
-[editable path="ReleMasa"]
-
-[editable path="EstacionRecarga"]
+[connection signal="pressed" from="ButtonJugar" to="." method="_on_ButtonJugar_pressed"]
+[connection signal="pressed" from="ButtonSalir" to="." method="_on_ButtonSalir_pressed"]
