@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Juego/Niveles/Nivel12.tscn" type="PackedScene" id=1]
+
+[node name="Nivel14" instance=ExtResource( 1 )]
+prox_nivel = "res://Juego/Menu Principal/MenuVictoria.tscn"

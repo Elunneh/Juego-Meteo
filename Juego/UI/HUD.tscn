@@ -134,10 +134,10 @@ margin_right = 1916.58
 margin_bottom = 957.503
 
 [node name="MiniMapa" parent="." instance=ExtResource( 8 )]
-margin_left = -75.287
-margin_top = -169.767
-margin_right = 242.713
-margin_bottom = 6.23303
+margin_left = -71.0443
+margin_top = -188.152
+margin_right = 246.956
+margin_bottom = -12.1517
 
 [editable path="InfoZonaRecarga"]
 
