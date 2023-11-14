@@ -30,3 +30,5 @@ func set_hitpoints_actual(hitpoints: float)-> void:
 func _on_TweenVisibilidad_tween_all_completed()->void:
 	if modulate.a == 1.0:
 		controlar_barra(value, false)
+		
+

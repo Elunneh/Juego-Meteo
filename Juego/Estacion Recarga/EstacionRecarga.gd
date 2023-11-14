@@ -37,10 +37,15 @@ func _unhandled_input(event: InputEvent)-> void:
 		
 	elif event.is_action_released("recarga_escudo"):
 		Eventos.emit_signal("ocultar_energia_escudo")
+		
+	if event.is_action("curar"):
+		nave_player.get_curar().controlar_energia(radio_energia_entregada)
+	elif event. is_action("curar"):
+		Eventos.emit_signal("ocultar_salud")
 
 ## Metodo Customs
 func puede_recargar(event: InputEvent) -> bool:
-	var hay_input = event.is_action("recarga_escudo") or event.is_action("recarga_laser")
+	var hay_input = event.is_action("recarga_escudo") or event.is_action("recarga_laser") or event.is_action("curar")
 	if hay_input and player_en_zona and energia > 0.0:
 		if !carga_sfx.playing:
 			carga_sfx.play()

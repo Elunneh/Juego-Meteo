@@ -18,16 +18,16 @@ extents = Vector2( 969.159, 11.4439 )
 extents = Vector2( 963.014, 10 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 13.7369, 901.645 )
+extents = Vector2( 13.7369, 1142.53 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 16.2511, 899.234 )
+extents = Vector2( 16.2511, 1124.55 )
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 1415.94, 23.8179 )
+extents = Vector2( 1663.51, 42.4063 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 1412.28, 17.4904 )
+extents = Vector2( 1727.24, 17.4904 )
 
 [sub_resource type="DynamicFont" id=9]
 size = 85
@@ -205,27 +205,23 @@ shape = SubResource( 4 )
 [node name="DetectorFueraZona" type="Node2D" parent="."]
 
 [node name="DetectorIzquierda" type="Area2D" parent="DetectorFueraZona"]
-position = Vector2( -1417.79, 17.7389 )
+position = Vector2( -1417.79, -3.61852 )
 collision_layer = 4
 collision_mask = 4
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorFueraZona/DetectorIzquierda"]
 modulate = Color( 1, 0.188235, 1, 1 )
+position = Vector2( -203.77, 0 )
 shape = SubResource( 5 )
 
 [node name="DetectorDerecho" type="Area2D" parent="DetectorFueraZona"]
-position = Vector2( 1391.83, 17.7389 )
+position = Vector2( 1453.23, -6.6823 )
 collision_layer = 2
 collision_mask = 4
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorFueraZona/DetectorDerecho"]
 modulate = Color( 0.0623322, 0.184637, 0.839844, 1 )
+position = Vector2( 173.804, 0 )
 shape = SubResource( 6 )
 
 [node name="DetectorSuperior" type="Area2D" parent="DetectorFueraZona"]
@@ -238,6 +234,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorFueraZona/DetectorSuperior"]
 modulate = Color( 0.0784314, 0.266667, 0.894118, 1 )
+position = Vector2( 5.99316, -257.709 )
 shape = SubResource( 7 )
 
 [node name="DetectorInferior" type="Area2D" parent="DetectorFueraZona"]
@@ -250,6 +247,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorFueraZona/DetectorInferior"]
 modulate = Color( 0.0862745, 0.188235, 0.858824, 1 )
+position = Vector2( 41.9526, 215.756 )
 shape = SubResource( 8 )
 
 [node name="Spawners" type="Node2D" parent="."]
