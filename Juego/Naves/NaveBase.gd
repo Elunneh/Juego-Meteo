@@ -58,10 +58,7 @@ func recibir_danio(danio:float)-> void:
 		destruir()
 		impacto_sfx.play() 
 	barra_salud.controlar_barra(hitpoints, true)
-		
-		
-		
-		
+
 
 ##Señales internas
 

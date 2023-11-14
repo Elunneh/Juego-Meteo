@@ -65,4 +65,4 @@ func _on_AnimationPlayer_animation_finished(anim_name: String)-> void:
 
 
 func _on_Escudo_body_entered(body: Node)-> void:
-	body.queue_free()
+	body.destruir()

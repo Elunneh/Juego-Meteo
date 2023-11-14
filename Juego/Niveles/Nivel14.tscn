@@ -131,5 +131,6 @@ position = Vector2( -4878.52, -5843.9 )
 numero_orbitales = 10
 
 [node name="BaseEnemiga8" parent="ContenedorBasesEnemigas" index="7" instance=ExtResource( 2 )]
+visible = false
 position = Vector2( 5597.45, -5267.55 )
 numero_orbitales = 10
