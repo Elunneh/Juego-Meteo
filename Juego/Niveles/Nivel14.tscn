@@ -134,3 +134,8 @@ numero_orbitales = 10
 visible = false
 position = Vector2( 5597.45, -5267.55 )
 numero_orbitales = 10
+
+[node name="Label" parent="HUD" index="7"]
+text = "Nivel 14"
+
+[editable path="HUD"]

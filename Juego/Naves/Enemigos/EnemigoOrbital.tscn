@@ -148,7 +148,7 @@ border_color = Color( 0, 0, 0, 1 )
 border_blend = true
 
 [node name="EnemigoOrbital" instance=ExtResource( 1 )]
-collision_mask = 7
+collision_mask = 11
 mode = 3
 contacts_reported = 2
 contact_monitor = true

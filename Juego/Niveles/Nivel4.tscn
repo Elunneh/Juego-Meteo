@@ -89,3 +89,8 @@ numero_orbitales = 4
 [node name="BaseEnemiga3" parent="ContenedorBasesEnemigas" index="2" instance=ExtResource( 3 )]
 position = Vector2( -3817.55, 3069.02 )
 numero_orbitales = 4
+
+[node name="Label" parent="HUD" index="7"]
+text = "Nivel 4"
+
+[editable path="HUD"]

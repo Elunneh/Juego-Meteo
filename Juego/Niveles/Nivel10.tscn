@@ -84,3 +84,8 @@ numero_orbitales = 8
 
 [node name="CamaraNivel" parent="." index="7"]
 position = Vector2( 12.6992, 0 )
+
+[node name="Label" parent="HUD" index="7"]
+text = "Nivel 10"
+
+[editable path="HUD"]

@@ -13,9 +13,9 @@ tiempo_limite = 120
 color_fondo = Color( 0.0470588, 0.00784314, 0.0784314, 1 )
 
 [node name="SectorDePeligro" parent="." index="3" instance=ExtResource( 3 )]
-position = Vector2( 564.715, -216.599 )
+position = Vector2( -962.353, 597.389 )
 tipo_peligro = "Meteorito"
-numero_peligros = 2
+numero_peligros = 16
 
 [node name="SectorDePeligro4" parent="." index="4" instance=ExtResource( 3 )]
 position = Vector2( -2431.26, 1561.43 )
@@ -61,3 +61,11 @@ numero_orbitales = 2
 
 [node name="Player" parent="." index="13"]
 position = Vector2( -1402.64, 600.274 )
+collision_mask = 18
+
+[node name="Label" parent="HUD" index="7"]
+text = "Nivel 1"
+
+[editable path="Player"]
+
+[editable path="HUD"]

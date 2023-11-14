@@ -89,3 +89,8 @@ position = Vector2( 7407.63, 4866.5 )
 
 [node name="BaseEnemiga5" parent="ContenedorBasesEnemigas" index="4" instance=ExtResource( 3 )]
 position = Vector2( -2372.7, -3919.64 )
+
+[node name="Label" parent="HUD" index="7"]
+text = "Nivel 11"
+
+[editable path="HUD"]
