@@ -30,7 +30,7 @@ onready var actualizador_timer: Timer = $ActualizadoTimer
 #Metodos
 
 func _ready()-> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN )
+#	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN )
 	MusicaJuego.set_streams(musica_nivel, musica_combate)
 	MusicaJuego.musica_nivel.play()
 	

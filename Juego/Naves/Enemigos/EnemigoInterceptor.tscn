@@ -165,6 +165,7 @@ contact_monitor = true
 script = ExtResource( 4 )
 hitpoints = 10.0
 numero_explosiones = 1.0
+potencia_max = 500.0
 
 [node name="Sprite" parent="." index="0"]
 rotation = -1.5708

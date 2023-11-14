@@ -10,15 +10,15 @@ prox_nivel = "res://Juego/Niveles/Nivel2.tscn"
 tiempo_limite = 120
 
 [node name="StarFieldBackground" parent="." index="1"]
-color_fondo = Color( 0.243137, 0.0392157, 0.4, 1 )
+color_fondo = Color( 0.0470588, 0.00784314, 0.0784314, 1 )
 
 [node name="SectorDePeligro" parent="." index="3" instance=ExtResource( 3 )]
-position = Vector2( 1921.2, -423.15 )
+position = Vector2( 564.715, -216.599 )
 tipo_peligro = "Meteorito"
 numero_peligros = 2
 
 [node name="SectorDePeligro4" parent="." index="4" instance=ExtResource( 3 )]
-position = Vector2( 73.462, 402.299 )
+position = Vector2( -2431.26, 1561.43 )
 tipo_peligro = "Meteorito"
 numero_peligros = 2
 
@@ -28,32 +28,36 @@ tipo_peligro = "Meteorito"
 numero_peligros = 2
 
 [node name="SectorDePeligro3" parent="." index="6" instance=ExtResource( 3 )]
-position = Vector2( 1387.83, -1248.6 )
+position = Vector2( 3165.72, -385.054 )
 tipo_peligro = "Meteorito"
+numero_peligros = 2
 
 [node name="EstacionRecarga" parent="ContenedorEstaciones" index="0" instance=ExtResource( 4 )]
-position = Vector2( 3276.01, 1539.85 )
+position = Vector2( 3860.17, 2238.31 )
 
 [node name="SectorDePeligro" parent="TriggersInterseptores" index="0" instance=ExtResource( 3 )]
-position = Vector2( -864.612, -535.313 )
+position = Vector2( -2871.09, -1436.96 )
 tipo_peligro = "Enemigo"
+numero_peligros = 1
 
 [node name="SectorDePeligro3" parent="TriggersInterseptores" index="1" instance=ExtResource( 3 )]
 position = Vector2( -118.738, 1843.42 )
 tipo_peligro = "Enemigo"
+numero_peligros = 1
 
 [node name="SectorDePeligro4" parent="TriggersInterseptores" index="2" instance=ExtResource( 3 )]
-position = Vector2( 1725.79, 1682.15 )
+position = Vector2( 3160.8, 1199.58 )
 tipo_peligro = "Enemigo"
 numero_peligros = 1
 
 [node name="SectorDePeligro2" parent="TriggersInterseptores" index="3" instance=ExtResource( 3 )]
-position = Vector2( 462.456, -655.955 )
+position = Vector2( 1033.92, -1659.19 )
 tipo_peligro = "Enemigo"
+numero_peligros = 1
 
 [node name="BaseEnemiga" parent="ContenedorBasesEnemigas" index="0" instance=ExtResource( 2 )]
-position = Vector2( 3185.89, -1128.77 )
-numero_orbitales = 4
+position = Vector2( 3452.57, -2005.02 )
+numero_orbitales = 2
 
 [node name="Player" parent="." index="13"]
 position = Vector2( -1402.64, 600.274 )

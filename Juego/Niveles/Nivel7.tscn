@@ -1,6 +1,74 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Juego/Niveles/NivelBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Juego/Estacion Recarga/EstacionRecarga.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Juego/Naves/BaseEnemiga.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Juego/Peligros/SectorDePeligro.tscn" type="PackedScene" id=4]
 
 [node name="Nivel7" instance=ExtResource( 1 )]
 prox_nivel = "res://Juego/Niveles/Nivel8.tscn"
+tiempo_limite = 180
+
+[node name="StarFieldBackground" parent="." index="1"]
+color_fondo = Color( 0.00392157, 0.0470588, 0.0235294, 1 )
+
+[node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" index="0" instance=ExtResource( 4 )]
+position = Vector2( 1217.33, -2784.72 )
+tipo_peligro = "Meteorito"
+numero_peligros = 5
+
+[node name="SectorDePeligro2" parent="TriggersLluviaMeteoritos" index="1" instance=ExtResource( 4 )]
+position = Vector2( 1912.68, 0 )
+tipo_peligro = "Meteorito"
+numero_peligros = 5
+
+[node name="SectorDePeligro3" parent="TriggersLluviaMeteoritos" index="2" instance=ExtResource( 4 )]
+position = Vector2( 2020.91, 1347.79 )
+tipo_peligro = "Meteorito"
+numero_peligros = 5
+
+[node name="SectorDePeligro4" parent="TriggersLluviaMeteoritos" index="3" instance=ExtResource( 4 )]
+position = Vector2( 25.9536, -299.181 )
+tipo_peligro = "Meteorito"
+numero_peligros = 5
+
+[node name="EstacionRecarga" parent="ContenedorEstaciones" index="0" instance=ExtResource( 2 )]
+position = Vector2( 993.537, 6254.02 )
+
+[node name="EstacionRecarga2" parent="ContenedorEstaciones" index="1" instance=ExtResource( 2 )]
+position = Vector2( 5914.87, 562.675 )
+
+[node name="EstacionRecarga3" parent="ContenedorEstaciones" index="2" instance=ExtResource( 2 )]
+position = Vector2( 936.699, -5143.9 )
+
+[node name="SectorDePeligro" parent="TriggersInterseptores" index="0" instance=ExtResource( 4 )]
+position = Vector2( 3467.72, -1053.51 )
+tipo_peligro = "Enemigo"
+numero_peligros = 4
+
+[node name="SectorDePeligro2" parent="TriggersInterseptores" index="1" instance=ExtResource( 4 )]
+position = Vector2( 2924.27, 3911.82 )
+tipo_peligro = "Enemigo"
+numero_peligros = 4
+
+[node name="SectorDePeligro3" parent="TriggersInterseptores" index="2" instance=ExtResource( 4 )]
+position = Vector2( -373.402, 4121.48 )
+tipo_peligro = "Enemigo"
+numero_peligros = 4
+
+[node name="SectorDePeligro4" parent="TriggersInterseptores" index="3" instance=ExtResource( 4 )]
+position = Vector2( -3112.87, 1727.08 )
+tipo_peligro = "Enemigo"
+numero_peligros = 4
+
+[node name="BaseEnemiga" parent="ContenedorBasesEnemigas" index="0" instance=ExtResource( 3 )]
+position = Vector2( -1815.12, -3205.43 )
+
+[node name="BaseEnemiga2" parent="ContenedorBasesEnemigas" index="1" instance=ExtResource( 3 )]
+position = Vector2( 4581.06, -3486.56 )
+
+[node name="BaseEnemiga3" parent="ContenedorBasesEnemigas" index="2" instance=ExtResource( 3 )]
+position = Vector2( -2939.87, 4744.16 )
+
+[node name="BaseEnemiga4" parent="ContenedorBasesEnemigas" index="3" instance=ExtResource( 3 )]
+position = Vector2( 5927.3, 4553.89 )
