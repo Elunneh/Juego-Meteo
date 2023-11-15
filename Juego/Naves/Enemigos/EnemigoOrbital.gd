@@ -45,3 +45,5 @@ func rotar_hacia_player()-> void:
 func _on_base_destruida(base:Node2D, _pos )-> void:
 	if base == base_duenia:
 		destruir()
+		
+

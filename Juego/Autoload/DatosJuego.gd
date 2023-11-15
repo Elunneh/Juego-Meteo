@@ -5,6 +5,7 @@ extends Node
 
 var player_actual: Player = null setget set_player_actual, get_player_actual
 
+
 ##Setter y getter
 
 func set_player_actual(player:Player)->void:
@@ -15,6 +16,9 @@ func get_player_actual()-> Player:
 	
 func _ready()-> void:
 	Eventos.connect("nave_destruida", self, "_on_nave_destruida")
+	
+
+		
 	
 func _on_nave_destruida(nave: NaveBase, _posicion, _explosiones)->void:
 	if nave is Player:

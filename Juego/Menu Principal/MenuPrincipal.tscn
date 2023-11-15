@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Juego/Menu Principal/MenuPrincipal.gd" type="Script" id=1]
 [ext_resource path="res://Juego/Fuente/Barra.ttf" type="DynamicFontData" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Juego/Naves/BaseEnemiga.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Juego/Metetoritos/meteorBrown4.png" type="Texture" id=8]
 [ext_resource path="res://Juego/Estacion Recarga/EstacionRecarga.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Juego/Explosiones/Explosion.tscn" type="PackedScene" id=10]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.356863, 0.815686, 0.827451, 1 )
@@ -204,6 +205,18 @@ tracks/13/keys = {
 "update": 0,
 "values": [ Vector2( 1141.37, 1133.34 ), Vector2( -97.3574, 412.524 ) ]
 }
+tracks/14/type = "value"
+tracks/14/path = NodePath("Label2:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 3, 7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.929412, 0.0509804, 0.0509804, 1 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="DynamicFont" id=5]
 size = 30
@@ -212,6 +225,353 @@ use_filter = true
 extra_spacing_top = 2
 extra_spacing_bottom = 1
 extra_spacing_char = 2
+extra_spacing_space = 1
+font_data = ExtResource( 5 )
+
+[sub_resource type="Animation" id=8]
+length = 3.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("FireBurstParticles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SparkleParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("SmokeParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("FireTrails/FireTrailParticles2D5:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("FireTrails/FireTrailParticles2D4:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.05, 0.55 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("FireTrails/FireTrailParticles2D3:emitting")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.1, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("FireTrails/FireTrailParticles2D2:emitting")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.15, 0.65 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("FireTrails/FireTrailParticles2D:emitting")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("ExplosionSFX:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0.05 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 3.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("FireBurstParticles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SparkleParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("SmokeParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("FireTrails/FireTrailParticles2D5:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("FireTrails/FireTrailParticles2D4:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.05, 0.55 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("FireTrails/FireTrailParticles2D3:emitting")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.1, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("FireTrails/FireTrailParticles2D2:emitting")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.15, 0.65 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("FireTrails/FireTrailParticles2D:emitting")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("ExplosionSFX:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0.05 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 3.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("FireBurstParticles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SparkleParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("SmokeParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("FireTrails/FireTrailParticles2D5:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("FireTrails/FireTrailParticles2D4:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.05, 0.55 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("FireTrails/FireTrailParticles2D3:emitting")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.1, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("FireTrails/FireTrailParticles2D2:emitting")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.15, 0.65 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("FireTrails/FireTrailParticles2D:emitting")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("ExplosionSFX:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0.05 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="DynamicFont" id=7]
+size = 100
+outline_color = Color( 0.054902, 0.00392157, 0.00392157, 1 )
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = 1
+extra_spacing_bottom = 1
+extra_spacing_char = 1
 extra_spacing_space = 1
 font_data = ExtResource( 5 )
 
@@ -262,11 +622,11 @@ __meta__ = {
 }
 
 [node name="Sprite6" type="Sprite" parent="."]
-position = Vector2( -76, -52 )
+position = Vector2( 1977.48, 1118.78 )
 texture = ExtResource( 8 )
 
 [node name="Sprite7" type="Sprite" parent="."]
-position = Vector2( -6.73474, 1021.35 )
+position = Vector2( 140.098, 1165.51 )
 texture = ExtResource( 8 )
 
 [node name="Sprite8" type="Sprite" parent="."]
@@ -342,7 +702,7 @@ scale = Vector2( 0.3, 0.3 )
 visible = false
 
 [node name="ReleMasa" parent="." instance=ExtResource( 6 )]
-position = Vector2( 838.494, 155.542 )
+position = Vector2( 968.661, 993.69 )
 scale = Vector2( 0.2, 0.2 )
 
 [node name="ActivadoSFX" parent="ReleMasa" index="3"]
@@ -354,6 +714,111 @@ scale = Vector2( 0.3, 0.3 )
 
 [node name="BarraEnergia" parent="EstacionRecarga" index="5"]
 visible = false
+
+[node name="Explosion" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1498.31, 167.81 )
+
+[node name="SmokeParticles2D" parent="Explosion" index="0"]
+emitting = true
+
+[node name="FireTrailParticles2D" parent="Explosion/FireTrails" index="0"]
+emitting = true
+
+[node name="FireTrailParticles2D5" parent="Explosion/FireTrails" index="4"]
+emitting = true
+
+[node name="FireBurstParticles2D" parent="Explosion" index="2"]
+emitting = true
+
+[node name="SparkleParticles2D" parent="Explosion" index="3"]
+emitting = true
+
+[node name="ExplosionSFX" parent="Explosion" index="5"]
+volume_db = -67.254
+
+[node name="Explosion2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 215.69, 282.103 )
+
+[node name="SmokeParticles2D" parent="Explosion2" index="0"]
+emitting = true
+
+[node name="FireTrailParticles2D" parent="Explosion2/FireTrails" index="0"]
+emitting = true
+
+[node name="FireTrailParticles2D5" parent="Explosion2/FireTrails" index="4"]
+emitting = true
+
+[node name="FireBurstParticles2D" parent="Explosion2" index="2"]
+emitting = true
+
+[node name="SparkleParticles2D" parent="Explosion2" index="3"]
+emitting = true
+
+[node name="AnimationPlayer" parent="Explosion2" index="4"]
+anims/Explode = SubResource( 8 )
+
+[node name="ExplosionSFX" parent="Explosion2" index="5"]
+volume_db = -67.254
+
+[node name="Explosion3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1463.39, 955.161 )
+
+[node name="SmokeParticles2D" parent="Explosion3" index="0"]
+emitting = true
+
+[node name="FireTrailParticles2D" parent="Explosion3/FireTrails" index="0"]
+emitting = true
+
+[node name="FireTrailParticles2D5" parent="Explosion3/FireTrails" index="4"]
+emitting = true
+
+[node name="FireBurstParticles2D" parent="Explosion3" index="2"]
+emitting = true
+
+[node name="SparkleParticles2D" parent="Explosion3" index="3"]
+emitting = true
+
+[node name="AnimationPlayer" parent="Explosion3" index="4"]
+anims/Explode = SubResource( 9 )
+
+[node name="ExplosionSFX" parent="Explosion3" index="5"]
+volume_db = -67.254
+
+[node name="Explosion4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 317.284, 910.714 )
+
+[node name="SmokeParticles2D" parent="Explosion4" index="0"]
+emitting = true
+
+[node name="FireTrailParticles2D" parent="Explosion4/FireTrails" index="0"]
+emitting = true
+
+[node name="FireTrailParticles2D5" parent="Explosion4/FireTrails" index="4"]
+emitting = true
+
+[node name="FireBurstParticles2D" parent="Explosion4" index="2"]
+emitting = true
+
+[node name="SparkleParticles2D" parent="Explosion4" index="3"]
+emitting = true
+
+[node name="AnimationPlayer" parent="Explosion4" index="4"]
+anims/Explode = SubResource( 10 )
+
+[node name="ExplosionSFX" parent="Explosion4" index="5"]
+volume_db = -67.254
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -594.0
+margin_right = 610.0
+margin_bottom = 115.0
+custom_fonts/font = SubResource( 7 )
+text = " METEORITOS GAME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="VBoxContainer/ButtonJugar" to="." method="_on_ButtonJugar_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonSalir" to="." method="_on_ButtonSalir_pressed"]
 
@@ -362,3 +827,11 @@ visible = false
 [editable path="ReleMasa"]
 
 [editable path="EstacionRecarga"]
+
+[editable path="Explosion"]
+
+[editable path="Explosion2"]
+
+[editable path="Explosion3"]
+
+[editable path="Explosion4"]
